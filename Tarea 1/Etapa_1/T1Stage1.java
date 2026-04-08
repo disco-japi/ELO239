@@ -8,9 +8,10 @@ public class T1Stage1 {
     T1Stage1() {
         territory = new Territory();
     }
-    public static void main (String args[]) throws IOException {
-                                // throws exception to avoid catching
-                                // exception in the program
+
+    public static void main(String args[]) throws IOException {
+        // throws exception to avoid catching
+        // exception in the program
         if (args.length != 2) {
             System.out.println("Usage: java T1Stage1 <configFile> <moveFile>");
             System.exit(-1);
@@ -18,29 +19,33 @@ public class T1Stage1 {
         Scanner confFile = new Scanner(new File(args[0]));
         Scanner movFile = new Scanner(new File(args[1]));
         T1Stage1 stage = new T1Stage1();
-        stage.setupSimulator(confFile);  // read configuration file and create objects
+        stage.setupSimulator(confFile); // read configuration file and create objects
         stage.runSimulation(movFile, System.out); // execute file's instructions
     }
-    public void setupSimulator(Scanner in) {  // create objects from file
+
+    public void setupSimulator(Scanner in) { // create objects from file
         EloTelTag tag;
         int personNumber = in.nextInt();
         for (int i = 0; i < personNumber; i++) {
             String personName = in.next();
             int tagNumber = in.nextInt();
-            boolean isThereTablet= in.nextInt()==1;
-            in.nextFloat(); in.nextFloat();  // skip cellular's location
+            boolean isThereTablet = in.nextInt() == 1;
+            in.nextFloat();
+            in.nextFloat(); // skip cellular's location
             for (int j = 0; j < tagNumber; j++) {
                 String tagName = in.next();
                 float x = in.nextFloat();
                 float y = in.nextFloat();
-                tag = new EloTelTag(personName,tagName,x, y);
+                tag = new EloTelTag(personName, tagName, x, y);
                 territory.addTag(tag);
             }
             if (isThereTablet) {
-                in.nextFloat(); in.nextFloat();  // skip tablet's location
+                in.nextFloat();
+                in.nextFloat(); // skip tablet's location
             }
         }
     }
+
     public void runSimulation(Scanner in, PrintStream output) {
         territory.printHeader(output);
         territory.printState(output, step);
@@ -52,11 +57,13 @@ public class T1Stage1 {
             String tagName = parts[1];
             float deltaX = in.nextFloat();
             float deltaY = in.nextFloat();
+            System.out.println(deltaX + "," + deltaY);
             EloTelTag tag = territory.getTag(personName, tagName);
             tag.move(deltaX, deltaY);
             territory.printState(output, step);
         }
     }
+
     private Territory territory;
-    private int step=0;
+    private int step = 0;
 }
