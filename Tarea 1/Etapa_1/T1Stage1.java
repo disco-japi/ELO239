@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.io.FileWriter;
 import java.util.Scanner;
 
 public class T1Stage1 {
@@ -18,9 +19,14 @@ public class T1Stage1 {
         }
         Scanner confFile = new Scanner(new File(args[0]));
         Scanner movFile = new Scanner(new File(args[1]));
+        FileWriter output = new FileWriter("output.csv");
+        output.write("");
+        output.close();
+        output = new FileWriter("output.csv", true);
         T1Stage1 stage = new T1Stage1();
         stage.setupSimulator(confFile); // read configuration file and create objects
-        stage.runSimulation(movFile, System.out); // execute file's instructions
+        stage.runSimulation(movFile, System.out, output); // execute file's instructions
+        output.close();
     }
 
     public void setupSimulator(Scanner in) { // create objects from file
@@ -46,21 +52,27 @@ public class T1Stage1 {
         }
     }
 
-    public void runSimulation(Scanner in, PrintStream output) {
-        territory.printHeader(output);
-        territory.printState(output, step);
+    public void runSimulation(Scanner in, PrintStream output, FileWriter fileOutput) throws IOException { // Ejecuta la
+                                                                                                          // simulación
+        territory.printHeader(fileOutput);
+        territory.printState(fileOutput, step);
         while (in.hasNextLine()) {
             step++;
             String equipment = in.next();
             String[] parts = equipment.split("\\.");
             String personName = parts[0];
             String tagName = parts[1];
-            float deltaX = in.nextFloat();
-            float deltaY = in.nextFloat();
-            System.out.println(deltaX + "," + deltaY);
             EloTelTag tag = territory.getTag(personName, tagName);
-            tag.move(deltaX, deltaY);
-            territory.printState(output, step);
+            if (in.hasNextFloat()) {
+                float deltaX = in.nextFloat();
+                float deltaY = in.nextFloat();
+                tag.move(deltaX, deltaY);
+            } else {
+                if (in.next().equals("FindMy")) {
+                    // Implementar FindMy
+                }
+            }
+            territory.printState(fileOutput, step);
         }
     }
 

@@ -1,3 +1,4 @@
 Pedro.maleta 0.5 -0.8
 Juan.llaves 1 2.0
+Juan.llaves FindMy
 Diego.mochila -0.6 -0.9

@@ -1,5 +1,7 @@
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Territory { // Piece of land where cellulars, tags, and tablets are located and moved.
     public void addTag(EloTelTag tag) {
@@ -18,15 +20,18 @@ public class Territory { // Piece of land where cellulars, tags, and tablets are
         return null;
     }
 
-    public void printHeader(PrintStream output) {
-        output.print("Step\t");
+    public void printHeader(FileWriter output) throws IOException {
+        output.write("Step\t");
         for (EloTelTag tag : tags)
-            output.print(tag.getOwnerName() + "." + tag.getName() + ".x.y" + "\t");
-        output.println();
+            output.write(tag.getHeader() + "\t");
+        output.write("\n");
     }
 
-    public void printState(PrintStream output, int step) {
-        output.println("");
+    public void printState(FileWriter output, int step) throws IOException {
+        output.write(step + "\t");
+        for (EloTelTag tag : tags)
+            output.write(tag.getState() + "\t");
+        output.write("\n");
     }
 
     private ArrayList<EloTelTag> tags = new ArrayList<EloTelTag>();
