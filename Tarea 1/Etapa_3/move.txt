@@ -1,0 +1,8 @@
+Pedro.maleta 0.5 -0.8
+Juan.llaves 1 2.0
+Juan.llaves FindMy
+Diego.mochila -0.6 -0.9
+Pedro.celular 10.5 5.0
+Juan.celular 6.3 3.0
+Pedro.celular 12.5 6.0
+Juan.celular 5.7 4.7
