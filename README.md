@@ -12,7 +12,7 @@ Este proyecyo busca simular un sistema de localización de dispositivos inspirad
 # Integrantes:   
 
 - Alejandro Díaz (Rol: 202430529-8)
-- Alvaro Leal (Rol: 202430548-4)
+- Álvaro Leal (Rol: 202430548-4)
 - Pablo Rodríguez (Rol: 202430541-7)
 - Sebastián Saldías (Rol: 202430534-4)
 
