@@ -9,6 +9,7 @@ public class EloTelTag extends Equipo {
     }
     public String getHeader() {
         return ownerName + "." + name + ".x\t.y";
+    }
     public void sonar(){
         System.out.println(this.getName()+"sonando");
     }

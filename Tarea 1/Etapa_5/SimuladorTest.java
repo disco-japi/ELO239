@@ -101,6 +101,7 @@ public class SimuladorTest {
                         c.move(deltaX, deltaY);
                         c.reportLocation();
                 }
+                }
                 else if (equipmentName.equals(("tablet"))){
                     Tablet tablet = territory.getTablet(personName);
                     if (tablet != null) {
