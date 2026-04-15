@@ -5,7 +5,7 @@ public class Cellular extends Equipo {
         this.visor = new Viewer(nube);
     }
 
-    public void reportTagLocation(EloTelTag tag) {  // it reports cellular location
+    public void reportTagLocation(EloTelTag tag) {
         nube.updateLocation(tag.getOwnerName(), tag.getName(), this.x, this.y);
     }
 
@@ -14,7 +14,7 @@ public class Cellular extends Equipo {
     }
 
     public void reportLocation(){
-        nube.updateLocation(this.ownerName, "celular", this.x, this.y); // reporta la ubicacion del celular a la nube
+        nube.updateLocation(this.ownerName, "celular", this.x, this.y);
     }
 
     public void findMy(){
@@ -29,13 +29,12 @@ public class Cellular extends Equipo {
             return;
         }
 
-        // Calcular distancia entre el celular y el equipo buscado
+
         double distancia = nube.getDistance(this.ownerName, "celular", this.ownerName, equipmentName);
 
         if (distancia < 10.0) {
-            // Hacer sonar el equipo
-            nube.soundEquipment(this.ownerName, equipmentName);
 
+            nube.soundEquipment(this.ownerName, equipmentName);
             double angulo = nube.getAngle(this.ownerName, "celular", this.ownerName, equipmentName);
             System.out.printf(java.util.Locale.US,
                     "%s.celular => distancia: %.2f m, ángulo: %.1f°\n",

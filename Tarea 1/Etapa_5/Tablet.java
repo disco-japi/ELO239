@@ -13,8 +13,8 @@ public class Tablet extends Equipo{
     public boolean isWithinRange(Cellular cell) {
         float dx = this.x - cell.getX();
         float dy = this.y - cell.getY();
-        float distance = (float) Math.sqrt(dx *dx + dy * dy);//pitagoras
-        float round = (float) Math.round(distance * 100) / 100;//redondea a 2 decimales
+        float distance = (float) Math.sqrt(dx *dx + dy * dy);
+        float round = (float) Math.round(distance * 100) / 100;
         return round <= TRACKING_RANGE;
     }
 }

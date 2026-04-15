@@ -1,50 +1,13 @@
 
-Pedro.maleta 0.5 -0.8
-Juan.llaves 1.0 2.0
-Diego.mochila -0.6 -0.9
-
-
 Sound Pedro maleta
-
-
-Pedro.celular 10.5 5.0
-Juan.celular 6.3 3.0
-
-
-Sound Juan llaves
-
-
-Pedro.celular 12.5 6.0
-Juan.celular 5.7 4.7
-
-
-Pedro.tablet 2.0 1.0
-Juan.tablet -1.0 -1.0
-
-
-Pedro.tablet FindMy
-Juan.tablet FindMy
-
-Sound Pedro tablet
-
-
-Sound Diego mochila
-
-Diego.celular 8.0 5.0
-Sound Diego mochila
-
-Diego.celular -2.0 -1.0
-Sound Diego mochila
+Pedro.celular 10.0 0.0
 Sound Pedro maleta
-Sound Pedro tablet
+Sound Pedro llaves
+Pedro.celular FindMy
 Sound Juan llaves
-
-# ===== FINDMY DESPUÉS DE SOUND =====
+Sound Pedro tablet
+Sound Diego mochila
 Pedro.celular FindMy
 Juan.celular FindMy
-
-# ===== MOVIMIENTOS FINALES =====
-Pedro.maleta -3.0 -2.0
-Juan.llaves 0.5 0.5
 Sound Pedro maleta
 Sound Juan llaves

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Territory {  // Piece of land where cellulars, tags, and tablets are located and moved.
+public class Territory {
     public void addCellular(Cellular cel) {
         cellulars.add(cel);
     }
@@ -11,7 +11,7 @@ public class Territory {  // Piece of land where cellulars, tags, and tablets ar
 
 
     public void forEachTagTryToReportLocation() {
-        for(EloTelTag tag : tags){ //busca un tag y reporta su ubicacion a la nube a través del celular mas cercano
+        for(EloTelTag tag : tags){
             Cellular cell = findNearByCellular(tag);//busca el celular mas cercano al tag
             if(cell != null)
                 cell.reportTagLocation(tag);
@@ -19,8 +19,8 @@ public class Territory {  // Piece of land where cellulars, tags, and tablets ar
     }
 
     public void forEachTabletTryToReportLocation() {
-        for(Tablet tablet : tablets){ //busca un tag y reporta su ubicacion a la nube a través del celular mas cercano
-            Cellular cell = findNearByCellular(tablet);//busca el celular mas cercano al tag
+        for(Tablet tablet : tablets){
+            Cellular cell = findNearByCellular(tablet);
             if(cell != null)
                 cell.reportTabletLocation(tablet);
         }
@@ -48,8 +48,8 @@ public class Territory {  // Piece of land where cellulars, tags, and tablets ar
         return null;
     }
     public EloTelTag getTag(String ownerName, String equipmentName) {
-        for(EloTelTag tag : tags)//busca un tag con el mismo nombre de propietario y equipo
-            if(tag.getOwnerName().equals(ownerName) && tag.getName().equals(equipmentName))//si lo encuentra, lo devuelve
+        for(EloTelTag tag : tags)
+            if(tag.getOwnerName().equals(ownerName) && tag.getName().equals(equipmentName))
                 return tag;
         System.err.println("No se encuentra el dispositivo: " + ownerName + "." + equipmentName);
         return null;

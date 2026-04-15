@@ -9,7 +9,6 @@ public class SimuladorTest {
         nube = new ETNube();
     }
     public static void main (String args[]) throws IOException {
-                                // exception in the program
         if (args.length != 2) {
             System.out.println("Usage: java T1Stage1 <configFile> <moveFile>");
             System.exit(-1);
@@ -17,12 +16,12 @@ public class SimuladorTest {
         Scanner confFile = new Scanner(new File(args[0]));
         Scanner movFile = new Scanner(new File(args[1]));
         SimuladorTest stage = new SimuladorTest();
-        stage.setupSimulator(confFile);  // read configuration file and create objects
+        stage.setupSimulator(confFile);
         PrintStream outFile = new PrintStream(new File("output.csv"));
-        stage.runSimulation(movFile, outFile);// execute file's instructions
+        stage.runSimulation(movFile, outFile);
         outFile.close();
     }
-    public void setupSimulator(Scanner in) {  // create objects from file
+    public void setupSimulator(Scanner in) {
         int personNumber = in.nextInt();
         for (int i = 0; i < personNumber; i++)
             setupPersonEquipment(in);
@@ -43,7 +42,7 @@ public class SimuladorTest {
 
     private void setupCellular(Scanner in, String personName){
         float x, y;
-        x = in.nextFloat(); // cellular's location
+        x = in.nextFloat();
         y = in.nextFloat();
         Cellular cellular = new Cellular(personName, x, y, nube);
         territory.addCellular(cellular);
@@ -70,11 +69,11 @@ public class SimuladorTest {
         nube.updateLocation(tag.getOwnerName(), tag.getName(), x, y);
     }
     public void runSimulation(Scanner in, PrintStream output) {
-        nube.printHeader(output); // in this stage, print cloud's state
+        nube.printHeader(output);
         nube.printState(output,step);
         boolean printFindMyTitle = false;
         while (in.hasNext()) {
-            String equipment = in.next(); // read person'a name . equipment's name
+            String equipment = in.next();
             if (equipment.equalsIgnoreCase("Sound")) {
                 procesarComandoSound(in);
                 continue;
@@ -84,24 +83,23 @@ public class SimuladorTest {
 
             if (parts.length < 2) {
 
-                System.out.println("Formato incorrecto: " + token);
+                System.out.println("Formato incorrecto: " + equipment);
                 continue;
             }
 
             String personName = parts[0];
             String equipmentName = parts[1];
             
-            if(in.hasNextFloat()){ //si es un movimiento físico
+            if(in.hasNextFloat()){
                 float deltaX = in.nextFloat();
                 float deltaY = in.nextFloat();
                 step++;
                 
                 if(equipmentName.equals("celular")){
-                    Cellular c = territory.getCellular(personName);//busca el celular de esta persona
+                    Cellular c = territory.getCellular(personName);
                     if(c != null) {
                         c.move(deltaX, deltaY);
-                        c.reportLocation();// reporta la nueva ubicacion del celular a la nube
-                    }
+                        c.reportLocation();
                 }
                 else if (equipmentName.equals(("tablet"))){
                     Tablet tablet = territory.getTablet(personName);
@@ -109,16 +107,15 @@ public class SimuladorTest {
                         tablet.move(deltaX, deltaY);
                     }
                 }
-                else{  // in this stage, it must be a tag
-                    EloTelTag tag = territory.getTag(personName, equipmentName); // find this user's tag
-                    if (tag != null)
+                else{
+                    EloTelTag tag = territory.getTag(personName, equipmentName);
                         tag.move(deltaX, deltaY);
                 }
                 territory.forEachTagTryToReportLocation();
                 territory.forEachTabletTryToReportLocation();
                 nube.printState(output, step);
             }
-            else{//si es un FindMy
+            else{
                 if(in.hasNext()) {
                     String command = in.next();
                     if (command.equals("FindMy")){
@@ -177,6 +174,6 @@ public class SimuladorTest {
         celular.sound(nombreEquipo);
     }
     private int step=0;
-    private Territory territory;  // it knows all the equipments and checks cellular nearby tags.
+    private Territory territory;
     private ETNube nube;
 }
