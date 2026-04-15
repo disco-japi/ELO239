@@ -8,8 +8,7 @@ public class SimuladorTest {
         territory = new Territory();
         nube = new ETNube();
     }
-
-    public static void main(String args[]) throws IOException {
+    public static void main (String args[]) throws IOException {
         if (args.length != 2) {
             System.out.println("Usage: java T1Stage1 <configFile> <moveFile>");
             System.exit(-1);
@@ -22,20 +21,18 @@ public class SimuladorTest {
         stage.runSimulation(movFile, outFile);
         outFile.close();
     }
-
     public void setupSimulator(Scanner in) {
         int personNumber = in.nextInt();
         for (int i = 0; i < personNumber; i++)
             setupPersonEquipment(in);
     }
-
-    private void setupPersonEquipment(Scanner in) {
+    private void setupPersonEquipment(Scanner in){
 
         String personName = in.next();
         int tagNumber = in.nextInt();
-        boolean isThereTablet = in.nextInt() == 1;
+        boolean isThereTablet= in.nextInt()==1;
         setupCellular(in, personName);
-
+        
         for (int j = 0; j < tagNumber; j++)
             setupEloTags(in, personName);
         if (isThereTablet) {
@@ -43,7 +40,7 @@ public class SimuladorTest {
         }
     }
 
-    private void setupCellular(Scanner in, String personName) {
+    private void setupCellular(Scanner in, String personName){
         float x, y;
         x = in.nextFloat();
         y = in.nextFloat();
@@ -51,15 +48,15 @@ public class SimuladorTest {
         territory.addCellular(cellular);
         nube.updateLocation(personName, "celular", x, y);
     }
-
-    private void setupTablets(Scanner in, String personName) {
-        float x, y;
+    private void setupTablets(Scanner in, String personName){
+        float x,y;
         x = in.nextFloat();
         y = in.nextFloat();
-        Tablet tablet = new Tablet(personName, x, y, nube);
+        Tablet tablet = new Tablet(personName, x, y,nube);
         territory.addTablet(tablet);
         nube.updateLocation(personName, "tablet", x, y);
     }
+
 
     private void setupEloTags(Scanner in, String personName) {
         EloTelTag tag;
@@ -67,14 +64,13 @@ public class SimuladorTest {
         String tagName = in.next();
         x = in.nextFloat();
         y = in.nextFloat();
-        tag = new EloTelTag(personName, tagName, x, y);
+        tag = new EloTelTag(personName,tagName,x, y);
         territory.addTag(tag);
         nube.updateLocation(tag.getOwnerName(), tag.getName(), x, y);
     }
-
     public void runSimulation(Scanner in, PrintStream output) {
         nube.printHeader(output);
-        nube.printState(output, step);
+        nube.printState(output,step);
         boolean printFindMyTitle = false;
         while (in.hasNext()) {
             String equipment = in.next();
@@ -93,60 +89,61 @@ public class SimuladorTest {
 
             String personName = parts[0];
             String equipmentName = parts[1];
-
-            if (in.hasNextFloat()) {
+            
+            if(in.hasNextFloat()){
                 float deltaX = in.nextFloat();
                 float deltaY = in.nextFloat();
                 step++;
-
-                if (equipmentName.equals("celular")) {
+                
+                if(equipmentName.equals("celular")){
                     Cellular c = territory.getCellular(personName);
-                    if (c != null) {
+                    if(c != null) {
                         c.move(deltaX, deltaY);
                         c.reportLocation();
-                    } else if (equipmentName.equals(("tablet"))) {
-                        Tablet tablet = territory.getTablet(personName);
-                        if (tablet != null) {
-                            tablet.move(deltaX, deltaY);
-                        }
-                    } else {
-                        EloTelTag tag = territory.getTag(personName, equipmentName);
-                        tag.move(deltaX, deltaY);
+                }
+                else if (equipmentName.equals(("tablet"))){
+                    Tablet tablet = territory.getTablet(personName);
+                    if (tablet != null) {
+                        tablet.move(deltaX, deltaY);
                     }
-                    territory.forEachTagTryToReportLocation();
-                    territory.forEachTabletTryToReportLocation();
-                    nube.printState(output, step);
-                } else {
-                    if (in.hasNext()) {
-                        String command = in.next();
-                        if (command.equals("FindMy")) {
-                            if (!printFindMyTitle) {
-                                System.out.println("\n-*-*-*-FIND MY-*-*-*-\n");
+                }
+                else{
+                    EloTelTag tag = territory.getTag(personName, equipmentName);
+                        tag.move(deltaX, deltaY);
+                }
+                territory.forEachTagTryToReportLocation();
+                territory.forEachTabletTryToReportLocation();
+                nube.printState(output, step);
+            }
+            else{
+                if(in.hasNext()) {
+                    String command = in.next();
+                    if (command.equals("FindMy")){
+                        if (!printFindMyTitle){
+                            System.out.println("\n-*-*-*-FIND MY-*-*-*-\n");
 
-                                printFindMyTitle = true;
-                            }
+                            printFindMyTitle = true;
+                        }
 
-                            if (equipmentName.equals("celular")) {
+                        if (equipmentName.equals("celular")) {
 
-                                Cellular c = territory.getCellular(personName);
-                                if (c != null)
-                                    c.findMy();
-                            } else if (equipmentName.equals("tablet")) {
-                                Tablet t = territory.getTablet(personName);
-                                if (t != null)
-                                    t.findMy();
-                            } else {
-                                Cellular c = territory.getCellular(personName);
-                                Tablet t = territory.getTablet(personName);
+                            Cellular c = territory.getCellular(personName);
+                            if (c != null) c.findMy();
+                        }
+                        else if (equipmentName.equals("tablet")) {
+                            Tablet t = territory.getTablet(personName);
+                            if (t != null) t.findMy();
+                        }
+                        else {
+                            Cellular c = territory.getCellular(personName);
+                            Tablet t = territory.getTablet(personName);
 
-                                if (c != null)
-                                    c.findMy();
-                                else if (t != null)
-                                    t.findMy();
-                            }
+                            if (c != null) c.findMy();
+                            else if (t != null) t.findMy();
                         }
                     }
                 }
+
             }
         }
     }
@@ -165,6 +162,7 @@ public class SimuladorTest {
         }
         String nombreEquipo = in.next();
 
+
         Cellular celular = territory.getCellular(dueno);
 
         if (celular == null) {
@@ -172,10 +170,10 @@ public class SimuladorTest {
             return;
         }
 
+
         celular.sound(nombreEquipo);
     }
-
-    private int step = 0;
+    private int step=0;
     private Territory territory;
     private ETNube nube;
 }
