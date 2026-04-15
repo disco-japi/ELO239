@@ -8,16 +8,15 @@ public class EloTelTag extends Equipo {
         return name;
     }
     public String getHeader() {
-        return ownerName + "." + name + ".x\t.y";//devuelve el header del tag
-    }
+        return ownerName + "." + name + ".x\t.y";
     public void sonar(){
-        system.out.println(this.getName()+"sonando");
+        System.out.println(this.getName()+"sonando");
     }
     public boolean isWithinRange(Cellular cell) {
         float dx = this.x - cell.getX();
         float dy = this.y - cell.getY();
-        float distance = (float) Math.sqrt(dx *dx + dy * dy);//pitagoras
-        float round = (float) Math.round(distance * 100) / 100;//redondea a 2 decimales
+        float distance = (float) Math.sqrt(dx *dx + dy * dy);
+        float round = (float) Math.round(distance * 100) / 100;
         return round <= TRACKING_RANGE;
     }
     private final String name;
