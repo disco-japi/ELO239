@@ -1,23 +1,22 @@
-# ELO239
-# ELO239
-Simulación de ELOTelTag y aplicaci+on FindMy
+# Tarea 1 - ELO239
+## Simulación de ELOTelTag y aplicación FindMy
 
 Este proyecyo busca simular un sistema de localización de dispositivos inspirado en airtag. 
-implementacines:
+## Implementaciones:
 - Dispositivos: EloTelTag, Celular,Tablet
 - Nube de localización (ETNube) que registra posiciones
 - Comando FindMy para visualizar equipos de una persona
 - Comando Sound para localizar equipos cercanos
 
 
-Integrantes:   
+# Integrantes:   
 
-- Sebita
-- alvi
-- ale
-- Pablo Rodríguez(202430541-7)
+- Alejandro Díaz (Rol: 202430529-8)
+- Alvaro Leal (Rol: 202430548-4)
+- Pablo Rodríguez (Rol: 202430541-7)
+- Sebastián Saldías (Rol: 202430534-4)
 
-Requisitos:  
+# Requisitos:  
 -  Java 11 o superior
 -  sistema operativo Linux
 
@@ -28,8 +27,9 @@ Compilación:
 
 
 
-Ejemplo de salida:
+# Ejemplo de salida:
 
+```
 maleta sonando
 Pedro.celular => distancia: 3.22 m, ángulo: 299.7°
 maleta sonando
@@ -78,4 +78,4 @@ maleta sonando
 Pedro.celular => distancia: 0.00 m, ángulo: 0.0°
 Equipo 'llaves' está demasiado lejos (44.82 m). No se puede activar sonido.
 
-
+```
