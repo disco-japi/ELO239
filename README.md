@@ -2,32 +2,28 @@
 ## Simulación de ELOTelTag y aplicación FindMy
 
 Este proyecyo busca simular un sistema de localización de dispositivos inspirado en airtag. 
-## Implementaciones:
+## Implementaciones
 - Dispositivos: EloTelTag, Celular,Tablet
 - Nube de localización (ETNube) que registra posiciones
 - Comando FindMy para visualizar equipos de una persona
 - Comando Sound para localizar equipos cercanos
 
 
-# Integrantes:   
+# Integrantes
 
 - Alejandro Díaz (Rol: 202430529-8)
 - Álvaro Leal (Rol: 202430548-4)
 - Pablo Rodríguez (Rol: 202430541-7)
 - Sebastián Saldías (Rol: 202430534-4)
 
-# Requisitos:  
--  Java 11 o superior
--  sistema operativo Linux
+# Requisitos
+-  Java (JDK y JRE) 11 o superior
 
-Compilación:
-  Bash:
-    javac *.java
-    java SimuladorTest config.txt move.txt
+# Pasos para ejecutar
+En una terminal compatible con bash y GNU Make, ejecutar `make` en la carpeta del hito deseado, y ejecutar `make run` para iniciar el programa con los ajustes preestablecidos.
 
 
-
-# Ejemplo de salida:
+# Ejemplo de salida
 
 ```
 maleta sonando
