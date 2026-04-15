@@ -1,7 +1,7 @@
 # Tarea 1 - ELO239
 ## Simulación de ELOTelTag y aplicación FindMy
 
-Este proyecyo busca simular un sistema de localización de dispositivos inspirado en airtag. 
+Este proyecto busca simular un sistema de localización de dispositivos inspirado en airtag. 
 ## Implementaciones
 - Dispositivos: EloTelTag, Celular,Tablet
 - Nube de localización (ETNube) que registra posiciones
