@@ -9,15 +9,15 @@ public class Cellular extends Equipo {
         nube.updateLocation(tag.getOwnerName(), tag.getName(), this.x, this.y);
     }
 
-    public void reportTabletLocation(Tablet tablet){
+    public void reportTabletLocation(Tablet tablet) {
         nube.updateLocation(tablet.getOwnerName(), "tablet", this.x, this.y);
     }
 
-    public void reportLocation(){
+    public void reportLocation() {
         nube.updateLocation(this.ownerName, "celular", this.x, this.y);
     }
 
-    public void findMy(){
+    public void findMy() {
         visor.showlocation(this.ownerName);
     }
 
@@ -28,7 +28,6 @@ public class Cellular extends Equipo {
             System.out.println("Error: Equipo '" + equipmentName + "' no encontrado para el dueño " + this.ownerName);
             return;
         }
-
 
         double distancia = nube.getDistance(this.ownerName, "celular", this.ownerName, equipmentName);
 
