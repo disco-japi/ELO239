@@ -1,4 +1,4 @@
-//import javax.xml.crypto.Data;
+///import javax.xml.crypto.Data;
 import java.awt.geom.Point2D;
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -54,7 +54,7 @@ public class ETNube {
     
     private ArrayList<Data> cloudData;
     
-    private static class Data {  // internal class
+    private static class Data {  /// internal class
         public Data(String owner, String equipment, Point2D loc) {
             ownerName = owner;
             equipmentName = equipment;
