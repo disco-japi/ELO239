@@ -18,18 +18,14 @@ Link GitHub: [(https://github.com/disco-japi/ELO239)]
 - Pablo Rodríguez (Rol: 202430541-7)
 - Sebastián Saldías (Rol: 202430534-4)
 
-# Requisitos:  
--  Java 11 o superior
--  sistema operativo Linux
+# Requisitos
+-  Java (JDK y JRE) 11 o superior
 
-Compilación:
-  Bash:
-    javac *.java
-    java SimuladorTest config.txt move.txt
+# Pasos para ejecutar
+En una terminal compatible con bash y GNU Make, ejecutar `make` en la carpeta del hito deseado, y ejecutar `make run` para iniciar el programa con los ajustes preestablecidos.
 
 
-
-# Ejemplo de salida:
+# Ejemplo de salida
 
 ```
 maleta sonando
@@ -81,3 +77,39 @@ Pedro.celular => distancia: 0.00 m, ángulo: 0.0°
 Equipo 'llaves' está demasiado lejos (44.82 m). No se puede activar sonido.
 
 ```
+
+
+Cellular: 
+clase que representa un dispositivo con gps que envia su ubicación 
+ métodos:
+ reportLocation: informa la ubicación 
+ reportTagLocation: informa la ubicacion de un tag cercano 
+ reportTabletLocation: informa la ubicación de un tag cercano
+ findMy: muestra equipos del dueño
+ sound: hace que el dispositivo localice un equipo y lo haga sonar
+ 
+EloTelTag:
+clase que representa un dispositivo tipo airtag
+ métodos:
+ getName:  retorna el nombre del dispositivo 
+ sonar: imprime "dispositivo" sonando
+
+Tablet:
+clase que representa un dispositivo sin gps, que utiliza la clase cellular
+ métodos:
+ findMy: muestra equipos del dueño
+ 
+ETnube:
+clase que representa el registro cebtral de todas las posiciones de los dispositivos 
+
+Territory:
+clase que gedtiona equipos y determina cercanías
+
+viewer:
+clase que permite visualizar los equipos de una persona
+
+SimuladorTest: 
+ejecuta la simulación 
+
+
+
