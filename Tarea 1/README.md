@@ -1,9 +1,9 @@
 # Tarea 1 - ELO239
 ## Simulación de ELOTelTag y aplicación FindMy
 
-Este proyecyo busca simular un sistema de localización de dispositivos inspirado en airtag. 
+Este proyecto busca simular un sistema de localización de dispositivos inspirado en airtag. 
 
-Link GitHub: [(https://github.com/disco-japi/ELO239)]
+[Link GitHub](https://github.com/disco-japi/ELO239)
 ## Implementaciones:
 - Dispositivos: EloTelTag, Celular,Tablet
 - Nube de localización (ETNube) que registra posiciones
@@ -78,38 +78,6 @@ Equipo 'llaves' está demasiado lejos (44.82 m). No se puede activar sonido.
 
 ```
 
-
-Cellular: 
-clase que representa un dispositivo con gps que envia su ubicación 
- métodos:
- reportLocation: informa la ubicación 
- reportTagLocation: informa la ubicacion de un tag cercano 
- reportTabletLocation: informa la ubicación de un tag cercano
- findMy: muestra equipos del dueño
- sound: hace que el dispositivo localice un equipo y lo haga sonar
- 
-EloTelTag:
-clase que representa un dispositivo tipo airtag
- métodos:
- getName:  retorna el nombre del dispositivo 
- sonar: imprime "dispositivo" sonando
-
-Tablet:
-clase que representa un dispositivo sin gps, que utiliza la clase cellular
- métodos:
- findMy: muestra equipos del dueño
- 
-ETnube:
-clase que representa el registro cebtral de todas las posiciones de los dispositivos 
-
-Territory:
-clase que gedtiona equipos y determina cercanías
-
-viewer:
-clase que permite visualizar los equipos de una persona
-
-SimuladorTest: 
-ejecuta la simulación 
 
 
 
