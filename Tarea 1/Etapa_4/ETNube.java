@@ -36,7 +36,7 @@ public class ETNube {
     public void printHeader(PrintStream output) {
         output.print("Step\t");
         for (Data data : cloudData)
-            output.print(data.ownerName + "." + data.equipmentName + ".x . y\t");
+            output.print(data.ownerName + "." + data.equipmentName + ".x \t y\t");
         output.println();
     }
 

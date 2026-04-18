@@ -3,14 +3,6 @@
 
 Este proyecto busca simular un sistema de localización de dispositivos inspirado en airtag. 
 
-[Link GitHub](https://github.com/disco-japi/ELO239)
-## Implementaciones:
-- Dispositivos: EloTelTag, Celular,Tablet
-- Nube de localización (ETNube) que registra posiciones
-- Comando FindMy para visualizar equipos de una persona
-- Comando Sound para localizar equipos cercanos
-
-
 # Integrantes grupo 6:   
 
 - Alejandro Díaz (Rol: 202430529-8)

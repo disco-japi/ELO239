@@ -21,7 +21,7 @@ public class Territory {
     /// Busca todos los tags y reporta su ubicación a la nube a través del celular
     /// mas cercano
     public void forEachTagTryToReportLocation() {
-        for (EloTelTag tagó : tags) {
+        for (EloTelTag tag : tags) {
             Cellular cell = findNearByCellular(tag);
             if (cell != null)
                 cell.reportTagLocation(tag);

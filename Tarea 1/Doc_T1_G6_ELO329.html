@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [['$','$'], ['\\(','\\)']]}});</script>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS": {"availableFonts":["TeX"],"scale": 150}});</script>
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback";
+	font-size: 14px;
+	padding: 0 12px;
+	line-height: 22px;
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+</style>
+
+</head>
+<body>
+<h1 id="documentaci%C3%B3n-tarea-1---elo329">Documentación Tarea 1 - ELO329</h1>
+<h3 id="grupo-6---20251---par-200">Grupo 6 - 2025.1 - Par. 200</h3>
+<ul>
+<li>Alejandro Díaz (Rol: 202430529-8)</li>
+<li>Álvaro Leal (Rol: 202430548-4)</li>
+<li>Pablo Rodríguez (Rol: 202430541-7)</li>
+<li>Sebastián Saldías (Rol: 202430534-4)</li>
+</ul>
+<h2 id="aclaraciones">Aclaraciones</h2>
+<p>Realizamos la etapa 5 (extra) de la tarea, sin embargo, esta documentación solo abarca hasta la etapa 4 de la tarea, acorde a lo establecido en las instrucciones de la tarea.</p>
+<p>Se ha comprobado el funcionamiento del programa en remoto Aragorn exitosamente.</p>
+<p>En el repositorio <a href="https://github.com/disco-japi/ELO239">GitHub</a> del grupo, puede encontrar también las demás tareas del semestre, y revisar los cambios acorde al tiempo de la tarea.</p>
+<h2 id="implementaciones">Implementaciones:</h2>
+<ul>
+<li><strong>Dispositivos</strong>: EloTelTag, Celular,Tablet</li>
+<li><strong>Nube de localización (ETNube)</strong> que registra posiciones</li>
+<li>Comando <strong>FindMy</strong> para visualizar equipos de una persona</li>
+</ul>
+<h2 id="diagrama-de-clases">Diagrama de clases</h2>
+<p><img src="file:///home/discojapi/Proyectos/ELO239/Tarea 1/DiagramaDeClases.png" alt="Diagrama de clases"></p>
+<h2 id="referencia-de-clases">Referencia de clases</h2>
+<p>A continuación, se presenta la referencia de clases del programa.</p>
+<h3 id="equipo">Equipo</h3>
+<p><strong>Descripción:</strong> Clase de un equipo genérico que sirve como base para los dispositivos del sistema.</p>
+<ul>
+<li>
+<p><strong>Herencia:</strong> Clase base.</p>
+</li>
+<li>
+<p><strong>Responsabilidades:</strong> Almacena el nombre del dueño (<code>ownerName</code>) y las coordenadas espaciales (x, y). Proporciona métodos para obtener la ubicación, mover el equipo y formatear su estado para salida de datos.</p>
+</li>
+</ul>
+<h3 id="eloteltag">EloTelTag</h3>
+<p><strong>Descripción:</strong> Clase del tag que representa un rastreador de proximidad.</p>
+<ul>
+<li>
+<p><strong>Herencia:</strong> Hereda de <code>Equipo</code>.</p>
+</li>
+<li>
+<p><strong>Responsabilidades:</strong> Posee un nombre de dispositivo específico y un rango de seguimiento definido (<code>TRACKING_RANGE = 10.0</code>). Incluye lógica para verificar si se encuentra dentro del rango de alcance de un celular mediante el cálculo de distancia euclidiana.</p>
+</li>
+</ul>
+<h3 id="cellular">Cellular</h3>
+<p><strong>Descripción:</strong> Dispositivo localizable con GPS propio.</p>
+<ul>
+<li>
+<p><strong>Herencia:</strong> Hereda de <code>Equipo</code>.</p>
+</li>
+<li>
+<p><strong>Responsabilidades:</strong> Actúa como puente hacia la nube (<code>ETNube</code>). Reporta su propia ubicación, así como la ubicación de tags y tablets que se encuentren dentro de su rango. Incluye la funcionalidad <code>findMy</code> para visualizar dispositivos a través de un <code>Viewer</code>.</p>
+</li>
+</ul>
+<h3 id="tablet">Tablet</h3>
+<p><strong>Descripción:</strong> Dispositivo localizable sin GPS propio.</p>
+<ul>
+<li>
+<p><strong>Herencia:</strong> Hereda de <code>Equipo</code>.</p>
+</li>
+<li>
+<p><strong>Responsabilidades:</strong> Similar al celular en cuanto a visualización (<code>findMy</code>), pero depende de dispositivos externos para reportar su ubicación a la nube. También define un <code>TRACKING_RANGE</code> para verificar su proximidad a un celular.</p>
+</li>
+</ul>
+<h3 id="etnube">ETNube</h3>
+<p><strong>Descripción:</strong> Clase de simulación del servicio en la nube ETNube para la localización de equipos.</p>
+<ul>
+<li>
+<p><strong>Herencia:</strong> Ninguna (Clase independiente).</p>
+</li>
+<li>
+<p><strong>Responsabilidades:</strong> Gestiona una base de datos interna (<code>ArrayList&lt;Data&gt;</code>) que registra la última ubicación conocida de cada dispositivo. Ofrece métodos para actualizar localizaciones, consultar datos por usuario y generar reportes formateados para el simulador.</p>
+</li>
+</ul>
+<h3 id="territory">Territory</h3>
+<p><strong>Descripción:</strong> Territorio virtual donde los celulares, tags y tablets se localizan y se mueven.</p>
+<ul>
+<li>
+<p><strong>Herencia:</strong> Ninguna (Clase independiente).</p>
+</li>
+<li>
+<p><strong>Responsabilidades:</strong> Contiene las colecciones de todos los dispositivos físicos en la simulación. Gestiona la interacción de proximidad entre ellos, permitiendo que los celulares detecten y reporten la ubicación de tags y tablets cercanos a la nube.</p>
+</li>
+</ul>
+<h3 id="viewer">Viewer</h3>
+<p><strong>Descripción:</strong> Visualiza los datos en consola.</p>
+<ul>
+<li>
+<p><strong>Herencia:</strong> Ninguna (Clase independiente).</p>
+</li>
+<li>
+<p><strong>Responsabilidades:</strong> Actúa como interfaz de salida para el usuario. Accede a la información almacenada en <code>ETNube</code> para imprimir en consola el estado y la ubicación de los equipos asociados a una persona específica.</p>
+</li>
+</ul>
+<h3 id="simuladortest">SimuladorTest</h3>
+<p><strong>Descripción:</strong> Clase principal del simulador.</p>
+<ul>
+<li>
+<p><strong>Herencia:</strong> Ninguna (Clase principal).</p>
+</li>
+<li>
+<p><strong>Responsabilidades:</strong> Orquestra la ejecución del programa. Se encarga de leer los archivos de configuración y movimientos, instanciar los objetos necesarios en el <code>Territory</code> y ejecutar los pasos de la simulación, procesando tanto desplazamientos físicos como comandos de búsqueda (<code>FindMy</code>).</p>
+</li>
+</ul>
+
+</body>
+</html>
