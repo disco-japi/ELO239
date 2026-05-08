@@ -7,7 +7,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.util.Duration;
-import javafx.scene.control.ContextMenu;
+//import javafx.scene.control.ContextMenu;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -94,7 +94,7 @@ public class Stage3 extends Application {
         dt = Math.toRadians(in.nextFloat());
         Cellular cellular = new Cellular(personName, x, y, r, theta, dt, nube);
         CellularView cView = new CellularView(cellular);
-        territory.addEquipment(cellular);
+        territory.addCellular(cellular);
         nube.updateLocation(personName, "celular", x, y);
         territoryView.add(cView);
         for (int j = 0; j < tagNumber; j++)
@@ -108,7 +108,7 @@ public class Stage3 extends Application {
             dt = Math.toRadians(in.nextDouble());
 
             Tablet tablet = new Tablet(personName, x, y, r, theta, dt, nube); // crear tablet
-            territory.addEquipment(tablet);
+            territory.addTablet(tablet);
             territoryView.add(new TabletView(tablet));
         }
     }
@@ -126,7 +126,7 @@ public class Stage3 extends Application {
 
         tag = new EloTelTag(personName, tagName, x, y, r, theta, dt);
         nube.updateLocation(tag.getOwnerName(), tag.getName(), x, y);
-        territory.addEquipment(tag);
+        territory.addTag(tag);
         territoryView.add(new EloTelTagView(tag));
     }
 
