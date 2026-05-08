@@ -20,34 +20,21 @@ public class Territory { // Piece of land where cellulars, tags, and tablets are
     }
 
     public void moveAll(double timeStep) {
-        for (Equipo eq : cellulars) {
+        for (Cellular eq : cellulars) {
+            eq.reportLocation();
             eq.move(timeStep); // mueve cada equipo por el tiempo dado
         }
-        for (Equipo eq : tablets) {
-            eq.move(timeStep); // mueve cada equipo por el tiempo dado
-        }
-        for (Equipo eq : tags) {
-            eq.move(timeStep); // mueve cada equipo por el tiempo dado
-        }
-        forEachTabletTryToReportLocation();
-        forEachTagTryToReportLocation();
-    }
-
-    public void forEachTagTryToReportLocation() {
-        for (EloTelTag tag : tags) {
-            Cellular cell = findNearByCellular(tag);
-            if (cell != null)
-                cell.reportTagLocation(tag);
-        }
-    }
-
-    /// Reporta la ubicación en cada tablet
-    public void forEachTabletTryToReportLocation() {
-        for (Tablet tablet : tablets) { /// busca un tag y reporta su ubicacion a la nube a través del celular
-                                        /// mas cercano
+        for (Tablet tablet : tablets) {
+            tablet.move(timeStep); // mueve cada equipo por el tiempo dado
             Cellular cell = findNearByCellularTab(tablet);/// busca el celular mas cercano al tag
             if (cell != null)
                 cell.reportTabletLocation(tablet);
+        }
+        for (EloTelTag tag : tags) {
+            tag.move(timeStep); // mueve cada equipo por el tiempo dado
+            Cellular cell = findNearByCellular(tag);
+            if (cell != null)
+                cell.reportTagLocation(tag);
         }
     }
 

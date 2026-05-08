@@ -1,10 +1,8 @@
 public class Tablet extends Equipo {
-    private static final float TRACKING_RANGE = 10.0f;
-    private ETNube nube;
+    private static final double TRACKING_RANGE = 50;
 
     public Tablet(String owner, double x, double y, double r, double theta, double dt, ETNube nube) {
         super(owner, x, y, r, theta, dt);
-        this.nube = nube;
     }
 
     /// public void findMy() { visor.showlocation(this.ownerName); }

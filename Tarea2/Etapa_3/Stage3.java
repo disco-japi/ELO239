@@ -7,7 +7,6 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.util.Duration;
-//import javafx.scene.control.ContextMenu;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,6 +16,7 @@ public class Stage3 extends Application {
     private Territory territory;
     private TerritoryView territoryView;
     private ETNube nube;
+    private BorderPane scenePane;
     private double timeStep; // in seconds
 
     @Override // Override the start method in the Application class
@@ -26,7 +26,7 @@ public class Stage3 extends Application {
         nube = new ETNube();
         territoryView = new TerritoryView(territory, configFile.next());
         timeStep = configFile.nextDouble();
-        BorderPane scenePane = new BorderPane();
+        scenePane = new BorderPane();
         scenePane.setTop(createMenuBar());
         scenePane.setCenter(territoryView);
         setupSimulator(configFile);
@@ -93,7 +93,7 @@ public class Stage3 extends Application {
         theta = Math.toRadians(in.nextFloat());
         dt = Math.toRadians(in.nextFloat());
         Cellular cellular = new Cellular(personName, x, y, r, theta, dt, nube);
-        CellularView cView = new CellularView(cellular);
+        CellularView cView = new CellularView(cellular, scenePane);
         territory.addCellular(cellular);
         nube.updateLocation(personName, "celular", x, y);
         territoryView.add(cView);
