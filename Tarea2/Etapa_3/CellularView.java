@@ -4,12 +4,10 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
 public class CellularView extends Group {
-    private final Cellular cellular;
     private final Rectangle rect;
     private final Text label;
 
     public CellularView(Cellular cellular) {
-        this.cellular = cellular;
         double width = 12;
         double height = 24;
         rect = new Rectangle(width, height);
