@@ -4,7 +4,7 @@ JFLAGS = --module-path $(PATH_TO_FX) --add-modules javafx.controls,javafx.fxml
 JC = javac
 JVM = java
 
-# Archivos a compilar para la Etapa 2 de la Tarea 2
+# Archivos a compilar para la Etapa 3 de la Tarea 2
 CLASSES = \
 Equipo.java \
     Cellular.java \
@@ -15,7 +15,6 @@ Equipo.java \
     EloTelTagView.java \
     TabletView.java \
     TerritoryView.java \
-    Stage2.java \
     Stage3.java \
     ETNube.java
 
@@ -25,7 +24,7 @@ classes:
 	$(JC) $(JFLAGS) $(CLASSES)
 
 run: classes
-	$(JVM) $(JFLAGS) Stage2
+	$(JVM) $(JFLAGS) Stage3
 
 clean:
 	rm -f *.class

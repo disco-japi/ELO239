@@ -1,23 +1,29 @@
-//import javax.xml.crypto.Data;
+
+///import javax.xml.crypto.Data;
 import java.awt.geom.Point2D;
 import java.io.PrintStream;
 import java.util.ArrayList;
 
+/// Clase de simulación del servicio en la nube ETNube, para la localización
+/// de equipos
 public class ETNube {
+    /// Inicializa los datos de la nube como un arreglo complejo de datos tipo Data
     public ETNube() {
         cloudData = new ArrayList<Data>();
     }
 
-    public void updateLocation(String owner, String equipment, float x, float y) {
+    /// Actualiza la localización de un equipo en los datos de la nube
+    public void updateLocation(String owner, String equipment, double x, double y) {
         Point2D location;
         if ((location = getLocation(owner, equipment)) == null) {
-            location = new Point2D.Float(x, y);
+            location = new Point2D.Double(x, y);
             Data data = new Data(owner, equipment, location);
             cloudData.add(data);
         }
         location.setLocation(x, y);
     }
 
+    /// Obtiene la localización de un equipamiento de acuerdo a los datos en la nube
     public Point2D getLocation(String owner, String equipment) {
         for (Data data : cloudData)
             if (data.ownerName.equals(owner) && data.equipmentName.equals(equipment))
@@ -25,13 +31,17 @@ public class ETNube {
         return null;
     }
 
+    /// Imprime a un stream de datos la cabecera para un conjunto de datos en el
+    /// formato establecido
     public void printHeader(PrintStream output) {
         output.print("Step\t");
         for (Data data : cloudData)
-            output.print(data.ownerName + "." + data.equipmentName + ".x . y\t");
+            output.print(data.ownerName + "." + data.equipmentName + ".x \t y\t");
         output.println();
     }
 
+    /// Imprime a un stream de datos la ubicación registrada en la nube de
+    /// los dispositivos
     public void printState(PrintStream output, int step) {
         output.print(step + "\t");
         for (Data data : cloudData)
@@ -40,73 +50,37 @@ public class ETNube {
         output.println();
     }
 
+    /// Imrpime a consola los dispositivos del usuario
     public void printUserEquipments(String owner) {
         System.out.println("\n------items------\n");
         for (Data data : cloudData) {
-            if (data.ownerName.equals(owner) && !data.equipmentName.equals("celular") && !data.equipmentName.equals("tablet")) {
-                System.out.printf(java.util.Locale.US, "%s: %.2f, %.2f\n", data.equipmentName, data.location.getX(), data.location.getY());
+            if (data.ownerName.equals(owner) && !data.equipmentName.equals("celular")
+                    && !data.equipmentName.equals("tablet")) {
+                System.out.printf(java.util.Locale.US, "%s: %.2f, %.2f\n", data.equipmentName, data.location.getX(),
+                        data.location.getY());
             }
         }
+
         System.out.println("dispsitivos:");
         for (Data data : cloudData) {
-            if (data.ownerName.equals(owner) && (data.equipmentName.equals("celular") || data.equipmentName.equals("tablet"))) {
-                System.out.printf(java.util.Locale.US, "%s: %.2f, %.2f\n", data.equipmentName, data.location.getX(), data.location.getY());
+            if (data.ownerName.equals(owner)
+                    && (data.equipmentName.equals("celular") || data.equipmentName.equals("tablet"))) {
+                System.out.printf(java.util.Locale.US, "%s: %.2f, %.2f\n", data.equipmentName, data.location.getX(),
+                        data.location.getY());
             }
         }
-    }
-
-    public Data getEquipment(String owner, String equipmentName) {
-        for (Data data : cloudData) {
-            if (data.ownerName.equals(owner) && data.equipmentName.equals(equipmentName)) {
-                return data;
-            }
-        }
-        return null;
-    }
-
-    public void soundEquipment(String owner, String equipmentName) {
-        Data equipo = getEquipment(owner, equipmentName);
-        if (equipo != null) {
-            System.out.println(equipmentName + " sonando");
-        }
-    }
-
-    public double getDistance(String owner1, String equipment1, String owner2, String equipment2) {
-        Point2D pos1 = getLocation(owner1, equipment1);
-        Point2D pos2 = getLocation(owner2, equipment2);
-        if (pos1 == null || pos2 == null) {
-            return Double.MAX_VALUE;
-        }
-        return pos1.distance(pos2);
-    }
-
-    public double getAngle(String owner1, String equipment1, String owner2, String equipment2) {
-        Point2D pos1 = getLocation(owner1, equipment1);
-        Point2D pos2 = getLocation(owner2, equipment2);
-        if (pos1 == null || pos2 == null) {
-            return 0;
-        }
-        double dx = pos2.getX() - pos1.getX();
-        double dy = pos2.getY() - pos1.getY();
-        double angulo = Math.toDegrees(Math.atan2(dy, dx));
-        if (angulo < 0) {
-            angulo += 360;
-        }
-        return angulo;
-    }
-
-    public ArrayList<Data> getCloudData() {
-        return cloudData;
     }
 
     private ArrayList<Data> cloudData;
 
-    public static class Data {
+    /// Define la clase estática interna con la cual se almacenan los datos
+    private static class Data {
         public Data(String owner, String equipment, Point2D loc) {
             ownerName = owner;
             equipmentName = equipment;
             location = loc;
         }
+
         public Point2D location;
         public String ownerName, equipmentName;
     }
