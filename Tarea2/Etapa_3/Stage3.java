@@ -93,9 +93,9 @@ public class Stage3 extends Application {
         theta = Math.toRadians(in.nextFloat());
         dt = Math.toRadians(in.nextFloat());
         Cellular cellular = new Cellular(personName, x, y, r, theta, dt, nube);
-        CellularView cView = new CellularView(cellular, scenePane);
+        CellularView cView = new CellularView(cellular, scenePane, nube);
         territory.addCellular(cellular);
-        nube.updateLocation(personName, "celular", x, y);
+        nube.updateLocation(personName, "Celular", x, y);
         territoryView.add(cView);
         for (int j = 0; j < tagNumber; j++)
             setupEloTags(in, personName);

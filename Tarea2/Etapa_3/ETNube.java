@@ -30,8 +30,25 @@ public class ETNube {
         return null;
     }
 
-    /// Imprime a un stream de datos la cabecera para un conjunto de datos en el
-    /// formato establecido
+    public String getFindMy(String owner) {
+        String h1 = "Bienes de " + owner + "\nÍtems:\n";
+        String items = "";
+        String h2 = "Dispositivos:\n";
+        String devices = "";
+        for (Data data : cloudData) {
+            if (data.ownerName.equals(owner)) {
+                String buffer = (data.equipmentName + ": ("
+                        + (int) getLocation(owner, data.equipmentName).getX() + " , "
+                        + (int) getLocation(owner, data.equipmentName).getY() + ")\n");
+                if (!data.equipmentName.equals("Celular")) {
+                    devices = devices.concat(buffer);
+                } else {
+                    items = items.concat(buffer);
+                }
+            }
+        }
+        return h1 + items + h2 + devices;
+    }
 
     private ArrayList<Data> cloudData;
 

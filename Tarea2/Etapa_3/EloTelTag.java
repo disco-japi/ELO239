@@ -13,9 +13,6 @@ public class EloTelTag extends Equipo {
         double dy = this.y.getValue() - cell.y.getValue();
         double distance = (double) Math.sqrt(dx * dx + dy * dy);///pitagoras
         double round = (double) Math.round(distance * 100) / 100;/// redondea a 2 decimales
-        if (round <= TRACKING_RANGE) {
-            System.out.println(round <= TRACKING_RANGE);
-        }
         return round <= TRACKING_RANGE;
     }
 

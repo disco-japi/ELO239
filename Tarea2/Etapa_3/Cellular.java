@@ -11,12 +11,12 @@ public class Cellular extends Equipo {
 
     /// Reporta la ubicacion de la tablet cercana al rango
     public void reportTabletLocation(Tablet tablet) {
-        nube.updateLocation(tablet.getOwnerName(), "tablet", this.x.getValue(), this.y.getValue());
+        nube.updateLocation(tablet.getOwnerName(), "Tablet", this.x.getValue(), this.y.getValue());
     }
 
     /// Reporta la ubicación del celular a la nube
     public void reportLocation() {
-        nube.updateLocation(this.ownerName, "celular", this.x.getValue(), this.y.getValue());
+        nube.updateLocation(this.ownerName, "Celular", this.x.getValue(), this.y.getValue());
     }
 
     // Método para la funcionalidad de FindMy
