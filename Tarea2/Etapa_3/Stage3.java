@@ -109,7 +109,7 @@ public class Stage3 extends Application {
 
             Tablet tablet = new Tablet(personName, x, y, r, theta, dt, nube); // crear tablet
             territory.addTablet(tablet);
-            territoryView.add(new TabletView(tablet));
+            territoryView.add(new TabletView(tablet, territory));
         }
     }
 
@@ -127,7 +127,7 @@ public class Stage3 extends Application {
         tag = new EloTelTag(personName, tagName, x, y, r, theta, dt);
         nube.updateLocation(tag.getOwnerName(), tag.getName(), x, y);
         territory.addTag(tag);
-        territoryView.add(new EloTelTagView(tag));
+        territoryView.add(new EloTelTagView(tag, territory));
     }
 
     /**

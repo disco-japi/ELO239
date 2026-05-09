@@ -1,7 +1,7 @@
+
 import javafx.scene.Group;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.control.ContextMenu;
@@ -12,22 +12,17 @@ import javafx.scene.Scene;
 
 public class CellularView extends Group {
     private final Rectangle rect;
-    private Circle radar;
     private final Text label;
     private ContextMenu menu;
     private Stage infoWindow;
     private Scene infoScene;
     private HBox layout;
     private Label infoLabel;
-    static final Color semiBlue = new Color(0, 0, 1, 0.4);
 
     public CellularView(Cellular cellular, Pane pane, ETNube nube) {
         makeCMenu(cellular.getOwnerName(), nube);
         double width = 12;
         double height = 24;
-        radar = new Circle();
-        radar.setFill(semiBlue);
-        radar.setRadius(30);
         rect = new Rectangle(width, height);
         rect.setFill(Color.DODGERBLUE);
         rect.setArcWidth(4);
@@ -38,12 +33,10 @@ public class CellularView extends Group {
         // Centrar el rectángulo y el circulo en (x, y) del modelo
         rect.xProperty().bind(cellular.xProperty().subtract(width / 2));
         rect.yProperty().bind(cellular.yProperty().subtract(height / 2));
-        radar.centerXProperty().bind(cellular.xProperty().subtract(width / 2));
-        radar.centerYProperty().bind(cellular.yProperty().subtract(height / 2));
         // Ubicar la etiqueta a la derecha del rectángulo
         label.xProperty().bind(cellular.xProperty().add(width / 2 + 4));
         label.yProperty().bind(cellular.yProperty().add(height / 2 + 4));
-        this.getChildren().addAll(rect, label, radar);
+        this.getChildren().addAll(rect, label);
     }
 
     private void makeCMenu(String ownerName, ETNube nube) {

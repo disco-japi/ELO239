@@ -40,10 +40,10 @@ public class ETNube {
                 String buffer = (data.equipmentName + ": ("
                         + (int) getLocation(owner, data.equipmentName).getX() + " , "
                         + (int) getLocation(owner, data.equipmentName).getY() + ")\n");
-                if (!data.equipmentName.equals("Celular")) {
-                    devices = devices.concat(buffer);
-                } else {
+                if (!data.equipmentName.equals("Celular") && !data.equipmentName.equals("Tablet")) {
                     items = items.concat(buffer);
+                } else {
+                    devices = devices.concat(buffer);
                 }
             }
         }
