@@ -1,3 +1,5 @@
+package cl.utfsm.elo.eloteltag;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
@@ -12,7 +14,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Stage3 extends Application {
+public class Stage4 extends Application {
     private Territory territory;
     private TerritoryView territoryView;
     private ETNube nube;

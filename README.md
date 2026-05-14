@@ -15,4 +15,4 @@ Este proyecto busca adeaptar y extender la Tarea 1 para simular graficamente un 
 -  JavaFX correspondiente a la version de JDK instalada
 
 # Pasos para ejecutar
-Modificar la ruta de localicacion de JavaFX en el Makefile, posteriormente, en una terminal compatible con bash y GNU Make, ejecutar `make` en la carpeta del hito deseado, y ejecutar `make run` para iniciar el programa con los ajustes preestablecidos, para eliminar los archivos compilados ejecutar `make clean`
+Abrir la carpeta de la etapa a ejecutar en una instancia de Visual Studio Code
