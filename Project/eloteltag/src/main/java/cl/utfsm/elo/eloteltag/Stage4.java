@@ -33,7 +33,7 @@ public class Stage4 extends Application {
         scenePane.setCenter(territoryView);
         setupSimulator(configFile);
         Scene scene = new Scene(scenePane, 1000, 700);
-        primaryStage.setTitle("EloTelTag Simulation: Stage 3"); // Set the window title
+        primaryStage.setTitle("EloTelTag Simulation: Stage 4"); // Set the window title
         primaryStage.setScene(scene); // Place the scene in the window
         primaryStage.show();
     }

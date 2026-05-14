@@ -170,7 +170,7 @@ public class CellularView extends Group {
      */
     private void updateGraphicsWindow(String ownerName, ETNube nube) {
         Pane graphicsPane = new Pane();
-        javafx.scene.image.Image image = new javafx.scene.image.Image("file:Placeres.jpg");
+        javafx.scene.image.Image image = new javafx.scene.image.Image("file:cl/utfsm/elo/eloteltagPlaceres.jpg");
         javafx.scene.image.ImageView mapView = new javafx.scene.image.ImageView(image);
 
         java.util.ArrayList<ETNube.EquipoInfo> equipos = nube.getEquiposByOwner(ownerName);

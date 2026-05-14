@@ -18,13 +18,15 @@ public class Stage4 extends Application {
     private ETNube nube;
     private BorderPane scenePane;
     private double timeStep; // in seconds
+    public String bgImage;
 
     @Override // Override the start method in the Application class
     public void start(Stage primaryStage) {
         Scanner configFile = openConfig(primaryStage);
         territory = new Territory();
         nube = new ETNube();
-        territoryView = new TerritoryView(territory, configFile.next());
+        bgImage = configFile.next();
+        territoryView = new TerritoryView(territory, bgImage);
         timeStep = configFile.nextDouble();
         scenePane = new BorderPane();
         scenePane.setTop(createMenuBar());
@@ -93,7 +95,7 @@ public class Stage4 extends Application {
         theta = Math.toRadians(in.nextFloat());
         dt = Math.toRadians(in.nextFloat());
         Cellular cellular = new Cellular(personName, x, y, r, theta, dt, nube);
-        CellularView cView = new CellularView(cellular, scenePane, nube);
+        CellularView cView = new CellularView(cellular, scenePane, nube, bgImage);
         territory.addCellular(cellular);
         nube.updateLocation(personName, "Celular", x, y);
         territoryView.add(cView);

@@ -15,7 +15,7 @@ Equipo.java \
     EloTelTagView.java \
     TabletView.java \
     TerritoryView.java \
-    Stage3.java \
+    Stage4.java \
     ETNube.java
 
 default: classes
@@ -24,7 +24,7 @@ classes:
 	$(JC) $(JFLAGS) $(CLASSES)
 
 run: classes
-	$(JVM) $(JFLAGS) Stage3
+	$(JVM) $(JFLAGS) Stage4
 
 clean:
 	rm -f *.class
