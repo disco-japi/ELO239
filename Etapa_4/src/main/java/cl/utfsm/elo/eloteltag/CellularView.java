@@ -1,4 +1,6 @@
 
+package cl.utfsm.elo.eloteltag;
+
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.Group;
@@ -14,18 +16,23 @@ import javafx.scene.layout.*;
 import javafx.scene.Scene;
 import javafx.util.Duration;
 import javafx.scene.control.ScrollPane;
+
 /**
  * Vista gr�fica de un celular en el territorio. *
- * <p>Esta clase maneja la representaci�n visual de un celular en la simulaci�n.
+ * <p>
+ * Esta clase maneja la representaci�n visual de un celular en la simulaci�n.
  * Muestra un rect�ngulo azul para representar el celular y una etiqueta con
- * el nombre de su due�o.</p>
+ * el nombre de su due�o.
+ * </p>
  *
- * <p>Proporciona un men� contextual con dos opciones:</p>
+ * <p>
+ * Proporciona un men� contextual con dos opciones:
+ * </p>
  * <ul>
- *   <li><b>Find My</b>: Muestra una ventana con la informaci�n de todos los
- *       equipos del due�o (actualizada cada 1 segundo)</li>
- *   <li><b>GFind My</b> (Extra-cr�dito): Muestra una ventana gr�fica con la
- *       imagen de fondo y las vistas de los equipos del due�o</li>
+ * <li><b>Find My</b>: Muestra una ventana con la informaci�n de todos los
+ * equipos del due�o (actualizada cada 1 segundo)</li>
+ * <li><b>GFind My</b> (Extra-cr�dito): Muestra una ventana gr�fica con la
+ * imagen de fondo y las vistas de los equipos del due�o</li>
  * </ul>
  *
  * @author �lvaro, Sebasti�n, Alejandro y Pablo
@@ -43,22 +50,24 @@ public class CellularView extends Group {
     private HBox layout;
     private Label infoLabel;
     private Stage graphicsWindow;
-
-
+    private String bgImage;
 
     /**
      * Constructor de la vista del celular.
      *
-     * <p>Configura el rect�ngulo y la etiqueta del celular, bindeando sus
+     * <p>
+     * Configura el rect�ngulo y la etiqueta del celular, bindeando sus
      * posiciones a las propiedades del modelo para que se muevan autom�ticamente.
-     * Tambi�n configura el men� contextual.</p>
+     * Tambi�n configura el men� contextual.
+     * </p>
      *
      * @param cellular El modelo del celular a visualizar
      * @param pane     Panel donde se mostrar� el men� contextual
      * @param nube     Referencia a la ETNube para obtener informaci�n de Find My
      */
-    public CellularView(Cellular cellular, Pane pane, ETNube nube) {
+    public CellularView(Cellular cellular, Pane pane, ETNube nube, String bgImage) {
         makeCMenu(cellular.getOwnerName(), nube);
+        this.bgImage = bgImage;
         double width = 12;
         double height = 24;
         rect = new Rectangle(width, height);
@@ -77,15 +86,16 @@ public class CellularView extends Group {
         this.getChildren().addAll(rect, label);
     }
 
-
     /**
      * Crea el men� contextual y las ventanas de Find My y GFind My.
      *
-     * <p>Configura:</p>
+     * <p>
+     * Configura:
+     * </p>
      * <ul>
-     *   <li>Ventana Find My con actualizaci�n autom�tica cada 1 segundo</li>
-     *   <li>Ventana GFind My (extra-cr�dito) con actualizaci�n autom�tica</li>
-     *   <li>Opciones del men� contextual</li>
+     * <li>Ventana Find My con actualizaci�n autom�tica cada 1 segundo</li>
+     * <li>Ventana GFind My (extra-cr�dito) con actualizaci�n autom�tica</li>
+     * <li>Opciones del men� contextual</li>
      * </ul>
      *
      * @param ownerName Nombre del due�o del celular
@@ -113,8 +123,7 @@ public class CellularView extends Group {
                     if (infoWindow.isShowing()) {
                         infoLabel.setText(nube.getFindMy(ownerName));
                     }
-                })
-        );
+                }));
         updater.setCycleCount(Timeline.INDEFINITE);
         updater.play();
         graphicsWindow = new Stage();
@@ -125,20 +134,17 @@ public class CellularView extends Group {
                     if (graphicsWindow.isShowing()) {
                         updateGraphicsWindow(ownerName, nube);
                     }
-                })
-        );
+                }));
         graphicsUpdater.setCycleCount(Timeline.INDEFINITE);
         graphicsUpdater.play();
 
         menu = new ContextMenu();
-
 
         MenuItem findMyItem = new MenuItem("Find My");
         findMyItem.setOnAction(e -> {
             infoLabel.setText(nube.getFindMy(ownerName));
             infoWindow.show();
         });
-
 
         MenuItem gFindMyItem = new MenuItem("GFind My");
         gFindMyItem.setOnAction(e -> {
@@ -149,14 +155,14 @@ public class CellularView extends Group {
         menu.getItems().addAll(findMyItem, gFindMyItem);
     }
 
-
-
     /**
      * Actualiza la ventana gr�fica de GFind My.
      *
-     * <p>Muestra los equipos de la persona sobre la imagen de fondo.
+     * <p>
+     * Muestra los equipos de la persona sobre la imagen de fondo.
      * Este m�todo es llamado cada 1 segundo mientras la ventana est� abierta
-     * para reflejar los movimientos de los equipos.</p>
+     * para reflejar los movimientos de los equipos.
+     * </p>
      *
      * @param ownerName Nombre del due�o
      * @param nube      Referencia a la ETNube
@@ -164,7 +170,7 @@ public class CellularView extends Group {
     private void updateGraphicsWindow(String ownerName, ETNube nube) {
         ScrollPane scrollPane = new ScrollPane();
         Pane graphicsPane = new Pane();
-        javafx.scene.image.Image image = new javafx.scene.image.Image("file:Placeres.jpg");
+        javafx.scene.image.Image image = new javafx.scene.image.Image("file:" + bgImage);
         javafx.scene.image.ImageView mapView = new javafx.scene.image.ImageView(image);
         double imgWidth = image.getWidth();
         double imgHeight = image.getHeight();
@@ -172,12 +178,12 @@ public class CellularView extends Group {
         mapView.setFitHeight(imgHeight);
         java.util.ArrayList<ETNube.EquipoInfo> equipos = nube.getEquiposByOwner(ownerName);
         for (ETNube.EquipoInfo equipo : equipos) {
-            Group vistaEquipo = crearVistaEquipo(equipo.Equiponame, equipo.x, equipo.y);;
+            Group vistaEquipo = crearVistaEquipo(equipo.Equiponame, equipo.x, equipo.y);
+            ;
             if (vistaEquipo != null) {
                 graphicsPane.getChildren().add(vistaEquipo);
             }
         }
-
 
         graphicsPane.setPrefSize(imgWidth, imgHeight);
         graphicsPane.setMinSize(imgWidth, imgHeight);
@@ -217,11 +223,13 @@ public class CellularView extends Group {
     /**
      * Crea una vista visual para un equipo espec�fico.
      *
-     * <p>Seg�n el tipo de equipo, crea una representaci�n visual:</p>
+     * <p>
+     * Seg�n el tipo de equipo, crea una representaci�n visual:
+     * </p>
      * <ul>
-     *   <li><b>Celular</b>: Rect�ngulo azul (12x24) con texto "Cel"</li>
-     *   <li><b>Tablet</b>: Rect�ngulo verde (20x15) con texto "Tbl"</li>
-     *   <li><b>Tag</b>: C�rculo rojo (radio 6) con nombre abreviado</li>
+     * <li><b>Celular</b>: Rect�ngulo azul (12x24) con texto "Cel"</li>
+     * <li><b>Tablet</b>: Rect�ngulo verde (20x15) con texto "Tbl"</li>
+     * <li><b>Tag</b>: C�rculo rojo (radio 6) con nombre abreviado</li>
      * </ul>
      *
      * @param equipmentName Nombre del equipo (determina el tipo y texto)
