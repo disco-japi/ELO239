@@ -16,6 +16,7 @@ private:
     std::vector<Data> cloudData;
 public:
     ETNube();
+    ~ETNube();
     void updateLocation(std::string owner, std::string equipment, double x, double y);
     QPointF * getLocation(std::string owner, std::string equipment);
     std::string getFindMy(std::string owner);
