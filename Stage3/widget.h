@@ -1,0 +1,48 @@
+#ifndef WIDGET_H
+#define WIDGET_H
+
+#include <QWidget>
+#include <QString>
+#include <QTimer>
+#include <vector>
+#include "territory.h"
+#include "territoryview.h"
+#include "cellular.h"
+#include "cellularview.h"
+#include "elotelTag.h"
+#include "elotelTagView.h"
+#include "tablet.h"
+#include "tabletView.h"
+
+class Widget : public QWidget
+{
+    Q_OBJECT
+
+public:
+    Widget(QString configFilePath, QWidget *parent = nullptr);
+    ~Widget();
+
+private slots:
+    void onPlay();
+    void onPause();
+    void onTimerTick();
+
+private:
+    Territory*                 territoryModel;
+    std::vector<Cellular*>     celularesModels;
+    std::vector<EloTelTag*>    tagsModels;
+    std::vector<Tablet*>       tabletsModels;
+
+    TerritoryView*             territoryView;
+    std::vector<CellularView*> celularesViews;
+    std::vector<EloTelTagView*>tagsViews;
+    std::vector<TabletView*>   tabletsViews;
+
+    QTimer* timer;
+    double  deltaTiempo;
+
+    void cargarConfiguracion(const QString& filePath);
+};
+
+#endif // WIDGET_H
+

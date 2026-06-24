@@ -1,0 +1,18 @@
+# ninja log v7
+4	51	1782263881583802535	Stage2_autogen/timestamp	a3808194cecd1885
+4	51	1782263881583802535	Stage2_autogen/mocs_compilation.cpp	a3808194cecd1885
+4	51	1782263881583802535	/home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/Stage2_autogen/timestamp	a3808194cecd1885
+4	51	1782263881583802535	/home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/Stage2_autogen/mocs_compilation.cpp	a3808194cecd1885
+482	2101	1782262881751649511	CMakeFiles/Stage2.dir/tablet.cpp.o	667a4c866a14f79d
+482	2109	1782262881751377215	CMakeFiles/Stage2.dir/elotelTag.cpp.o	9a9661afb447780b
+481	2183	1782262881750631726	CMakeFiles/Stage2.dir/equipo.cpp.o	6c7e8a70dd70b052
+481	2282	1782262881750833390	CMakeFiles/Stage2.dir/cellular.cpp.o	234758bdbdb46ebe
+482	2348	1782262881750990443	CMakeFiles/Stage2.dir/territory.cpp.o	32db60a77bc1c7ef
+482	7405	1782262881751755933	CMakeFiles/Stage2.dir/tabletView.cpp.o	74e90c09974245ca
+482	7719	1782262881751532735	CMakeFiles/Stage2.dir/elotelTagView.cpp.o	45815b5442f9ed3a
+481	8055	1782262881749494300	CMakeFiles/Stage2.dir/main.cpp.o	f01fd8b1b165105a
+482	8124	1782262881751097924	CMakeFiles/Stage2.dir/cellularview.cpp.o	c115363763456a37
+480	8165	1782262881748494694	CMakeFiles/Stage2.dir/Stage2_autogen/mocs_compilation.cpp.o	958991ecf9f08caf
+482	8326	1782262881751245521	CMakeFiles/Stage2.dir/territoryview.cpp.o	7239b41cfad1ba96
+481	8555	1782262881750508635	CMakeFiles/Stage2.dir/widget.cpp.o	384e5a0945549167
+8555	8953	1782262889823566434	Stage2	bb63743ff391d900
