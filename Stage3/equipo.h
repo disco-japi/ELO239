@@ -11,6 +11,7 @@ protected:
     int rapidez;
     int angulo;
     int deltaAngulo;
+    int rango = 50;
 
 public:
     Equipo(std::string nombre, double x, double y, int vel, int ang, int dAng);
@@ -22,6 +23,7 @@ public:
     int getRapidez() const;
     int getAngulo() const;
     int getDeltaAngulo() const;
+    bool enRango(Equipo equipo);
 
     // Movimiento: avanza dt segundos dentro de los límites [0,w]x[0,h]
     void mover(double dt, int w, int h);

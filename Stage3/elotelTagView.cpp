@@ -14,6 +14,7 @@ EloTelTagView::EloTelTagView(EloTelTag* model, QGraphicsItem* parent)
     label->setScale(0.7);
 
     updatePosition();
+    // radarTemp = new QTimer(this);
 }
 
 void EloTelTagView::updatePosition() {

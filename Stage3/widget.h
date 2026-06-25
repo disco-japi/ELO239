@@ -22,6 +22,7 @@ class Widget : public QWidget
 public:
     Widget(QString configFilePath, QWidget *parent = nullptr);
     ~Widget();
+    Cellular * findNearByCellular(Equipo equipo);
 
 private slots:
     void onPlay();

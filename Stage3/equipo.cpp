@@ -54,3 +54,10 @@ void Equipo::mover(double dt, int w, int h) {
     // Recalcular ángulo desde las componentes de velocidad resultantes
     angulo = (int)(std::atan2(vy, vx) * 180.0 / M_PI);
 }
+bool Equipo::enRango(Equipo equipo){
+    double dx = this->getX() - equipo.getX();
+    double dy = this->getY() - equipo.getY();
+    double distance = (double) std::sqrt(dx * dx + dy * dy);///pitagoras
+    double round = (double) std::round(distance * 100) / 100;/// redondea a 2 decimales
+    return round <= rango;
+}

@@ -155,3 +155,12 @@ void Widget::cargarConfiguracion(const QString& filePath)
     file.close();
 }
 
+Cellular * Widget::findNearByCellular(Equipo equipo){
+    for (Cellular * cell : celularesModels){
+        if (equipo.enRango(*cell)){
+            return cell;
+        }
+    }
+    return NULL;
+}
+

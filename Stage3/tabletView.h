@@ -4,9 +4,11 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsTextItem>
 #include <QBrush>
+#include <QObject>
 #include "tablet.h"
 
 class TabletView : public QGraphicsRectItem {
+    // Q_OBJECT
 private:
     Tablet* tabletModel;
     QGraphicsTextItem* label;

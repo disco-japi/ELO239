@@ -1,18 +1,10 @@
-/home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/Stage3_autogen/EWIEGA46WW/moc_widget.cpp: /home/discojapi/Proyectos/ELO239/Stage3/widget.h \
+/home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/Stage3_autogen/EWIEGA46WW/moc_tabletView.cpp: /home/discojapi/Proyectos/ELO239/Stage3/tabletView.h \
   /home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/Stage3_autogen/moc_predefs.h \
-  /home/discojapi/Proyectos/ELO239/Stage3/cellular.h \
-  /home/discojapi/Proyectos/ELO239/Stage3/cellularview.h \
-  /home/discojapi/Proyectos/ELO239/Stage3/elotelTag.h \
-  /home/discojapi/Proyectos/ELO239/Stage3/elotelTagView.h \
   /home/discojapi/Proyectos/ELO239/Stage3/equipo.h \
   /home/discojapi/Proyectos/ELO239/Stage3/etnube.h \
   /home/discojapi/Proyectos/ELO239/Stage3/tablet.h \
-  /home/discojapi/Proyectos/ELO239/Stage3/tabletView.h \
-  /home/discojapi/Proyectos/ELO239/Stage3/territory.h \
-  /home/discojapi/Proyectos/ELO239/Stage3/territoryview.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/QObject \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/QPointF \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/QString \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/QTimer \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/q17memory.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/q20bit.h \
@@ -56,7 +48,6 @@
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qdatastream.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qdeadlinetimer.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qdebug.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qendian.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qeventloop.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qexceptionhandling.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qflags.h \
@@ -148,52 +139,28 @@
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qxptype_traits.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qyieldcpu.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/QBrush \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qaction.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qbitmap.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qbrush.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qcolor.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qcursor.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qfont.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qfontinfo.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qfontmetrics.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qfontvariableaxis.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qicon.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qimage.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qkeysequence.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qpaintdevice.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qpainter.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qpainterpath.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qpalette.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qpen.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qpixelformat.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qpixmap.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qpolygon.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qregion.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qrgb.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qrgba64.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qtextoption.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qtgui-config.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qtguiexports.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qtguiglobal.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qtransform.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qwindowdefs.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/QGraphicsEllipseItem \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/QGraphicsRectItem \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/QGraphicsScene \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/QGraphicsTextItem \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/QGraphicsView \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/QWidget \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/qframe.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/qgraphicsitem.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/qgraphicsscene.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/qgraphicsview.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/qscrollarea.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/qsizepolicy.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/qtwidgets-config.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/qtwidgetsexports.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/qwidget.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/bitsperlong.h \
   /usr/include/asm-generic/errno-base.h \

@@ -4,9 +4,11 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsTextItem>
 #include <QBrush>
+#include <QObject>
 #include "cellular.h"
 
 class CellularView : public QGraphicsRectItem {
+    // Q_OBJECT
 private:
     Cellular* cellularModel;
     QGraphicsTextItem* label;
