@@ -13,6 +13,7 @@
 #include "elotelTagView.h"
 #include "tablet.h"
 #include "tabletView.h"
+#include "etnube.h"
 
 class Widget : public QWidget
 {
@@ -37,6 +38,7 @@ private:
     std::vector<CellularView*> celularesViews;
     std::vector<EloTelTagView*>tagsViews;
     std::vector<TabletView*>   tabletsViews;
+    ETNube * nube;
 
     QTimer* timer;
     double  deltaTiempo;

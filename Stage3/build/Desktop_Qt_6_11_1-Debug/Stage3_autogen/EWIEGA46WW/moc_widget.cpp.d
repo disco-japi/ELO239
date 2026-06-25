@@ -5,10 +5,12 @@
   /home/discojapi/Proyectos/ELO239/Stage3/elotelTag.h \
   /home/discojapi/Proyectos/ELO239/Stage3/elotelTagView.h \
   /home/discojapi/Proyectos/ELO239/Stage3/equipo.h \
+  /home/discojapi/Proyectos/ELO239/Stage3/etnube.h \
   /home/discojapi/Proyectos/ELO239/Stage3/tablet.h \
   /home/discojapi/Proyectos/ELO239/Stage3/tabletView.h \
   /home/discojapi/Proyectos/ELO239/Stage3/territory.h \
   /home/discojapi/Proyectos/ELO239/Stage3/territoryview.h \
+  /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/QPointF \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/QString \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/QTimer \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/q17memory.h \

@@ -2,10 +2,13 @@
 #define TABLET_H
 
 #include "equipo.h"
+#include "etnube.h"
 
 class Tablet : public Equipo {
+private:
+    ETNube *nube;
 public:
-    Tablet(std::string nombre, double x, double y, int vel, int ang, int dAng);
+    Tablet(std::string nombre, double x, double y, int vel, int ang, int dAng, ETNube *nube);
     ~Tablet() override = default;
 };
 

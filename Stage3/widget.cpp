@@ -8,7 +8,7 @@
 #include <QMenuBar>
 #include <QMenu>
 #include <QAction>
-#include <iostream>
+#include <string.h>
 
 Widget::Widget(QString configFilePath, QWidget *parent)
     : QWidget(parent)
@@ -17,6 +17,7 @@ Widget::Widget(QString configFilePath, QWidget *parent)
     , territoryModel(nullptr)
     , territoryView(nullptr)
 {
+    nube = new ETNube;
     setWindowTitle("EloTelTag Simulation in C++ and Qt: Stage 2");
     resize(1000, 700);
 
@@ -42,6 +43,7 @@ Widget::Widget(QString configFilePath, QWidget *parent)
 Widget::~Widget()
 {
     delete territoryModel;
+    delete nube;
     for (auto c : celularesModels) delete c;
     for (auto t : tagsModels)      delete t;
     for (auto tb: tabletsModels)   delete tb;
@@ -109,11 +111,12 @@ void Widget::cargarConfiguracion(const QString& filePath)
         double cx, cy; int cvel, cang, cdang;
         in >> cx >> cy >> cvel >> cang >> cdang;
 
-        Cellular* cel = new Cellular(nombrePersona.toStdString(), cx, cy, cvel, cang, cdang);
+        Cellular* cel = new Cellular(nombrePersona.toStdString(), cx, cy, cvel, cang, cdang, nube);
         celularesModels.push_back(cel);
         cel->imprimirPosicion();
 
         CellularView* cView = new CellularView(cel);
+        nube->updateLocation(nombrePersona.toStdString(), "Celular", cx, cy);
         cView->setZValue(10);
         celularesViews.push_back(cView);
         territoryView->getScene()->addItem(cView);
@@ -131,19 +134,21 @@ void Widget::cargarConfiguracion(const QString& filePath)
             tView->setZValue(8);
             tagsViews.push_back(tView);
             territoryView->getScene()->addItem(tView);
+            nube->updateLocation(tag->getNombreDueno(),tag->getNombreTag(), tag->getX(), tag->getY());
         }
 
         if (hasTablet == 1) {
             double tbx, tby; int tbvel, tbang, tbdang;
             in >> tbx >> tby >> tbvel >> tbang >> tbdang;
 
-            Tablet* tab = new Tablet(nombrePersona.toStdString(), tbx, tby, tbvel, tbang, tbdang);
+            Tablet* tab = new Tablet(nombrePersona.toStdString(), tbx, tby, tbvel, tbang, tbdang, nube);
             tabletsModels.push_back(tab);
 
             TabletView* tabView = new TabletView(tab);
             tabView->setZValue(9);
             tabletsViews.push_back(tabView);
             territoryView->getScene()->addItem(tabView);
+            nube->updateLocation(tab->getNombreDueno(),"Tablet", tab->getX(), tab->getY());
         }
     }
 
