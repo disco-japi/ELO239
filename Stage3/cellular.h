@@ -15,8 +15,8 @@ private:
 public:
     Cellular(std::string nombre, double x, double y, int vel, int ang, int dAng, ETNube *nube);
     ~Cellular() override = default;
-    void reportarUbicacionTag(EloTelTag tag);
-    void reportarUbicacionTablet(Tablet tab);
+    void reportarUbicacionTag(EloTelTag * tag);
+    void reportarUbicacionTablet(Tablet * tab);
 };
 
 #endif // CELLULAR_H

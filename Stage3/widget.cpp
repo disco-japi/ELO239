@@ -52,11 +52,17 @@ Widget::~Widget()
 void Widget::onPlay()
 {
     timer->start((int)(deltaTiempo * 1000));
+    for(EloTelTagView* tag : tagsViews){
+        tag->startTimer();
+    }
 }
 
 void Widget::onPause()
 {
     timer->stop();
+    for(EloTelTagView* tag : tagsViews){
+        tag->stopTimer();
+    }
 }
 
 void Widget::onTimerTick()
@@ -153,12 +159,4 @@ void Widget::cargarConfiguracion(const QString& filePath)
     file.close();
 }
 
-Cellular * Widget::findNearByCellular(Equipo equipo){
-    for (Cellular * cell : territoryModel->celularesModels){
-        if (equipo.enRango(cell)){
-            return cell;
-        }
-    }
-    return NULL;
-}
 

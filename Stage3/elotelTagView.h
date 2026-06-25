@@ -17,10 +17,13 @@ private:
     EloTelTag* tagModel;
     QGraphicsTextItem* label;
     QTimer * radarTemp;
+    Territory * territory;
 
 public:
     EloTelTagView(EloTelTag* model, Territory *territory, QGraphicsItem* parent = nullptr);
     void updatePosition();
+    void startTimer();
+    void stopTimer();
 };
 
 #endif // ELOTELTAGVIEW_H

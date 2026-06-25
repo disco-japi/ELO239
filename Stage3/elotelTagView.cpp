@@ -2,16 +2,16 @@
 #include <QString>
 #include <iostream>
 #include "cellular.h"
+#include <QDebug>
 
 EloTelTagView::EloTelTagView(EloTelTag* model, Territory *territory, QGraphicsItem* parent)
     : QGraphicsEllipseItem(parent), tagModel(model) {
 
     setRect(-6, -6, 12, 12);
     setBrush(QBrush(Qt::red));
-
+    this->territory = territory;
     radarTemp = new QTimer(this);
     connect(radarTemp, &QTimer::timeout, this,&EloTelTagView::onTimeOut);
-    radarTemp->start(4000);
     label = new QGraphicsTextItem(this);
     label->setDefaultTextColor(Qt::darkRed);
     label->setPlainText(QString::fromStdString(model->getNombreTag()));
@@ -28,4 +28,15 @@ void EloTelTagView::updatePosition() {
 }
 
 void EloTelTagView::onTimeOut(){
+    Cellular * cell = territory->findNearByCellular(tagModel);
+    if (cell != NULL){
+        cell->reportarUbicacionTag(tagModel);
+        std::cout << "encontrado\n";
+    }
+}
+void EloTelTagView::startTimer(){
+    radarTemp->start(4000);
+}
+void EloTelTagView::stopTimer(){
+    radarTemp->stop();
 }

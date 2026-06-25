@@ -17,6 +17,7 @@ public:
     std::vector<Tablet*>       tabletsModels;
     Territory(std::string path);
     std::string getImagePath() const;
+    Cellular * findNearByCellular(Equipo * equipo);
 };
 
 #endif // TERRITORY_H
