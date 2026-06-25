@@ -7,16 +7,19 @@
 #include <QTimer>
 #include <QObject>
 #include "elotelTag.h"
+#include "territory.h"
 
-class EloTelTagView : public QGraphicsEllipseItem {
-    // Q_OBJECT
+class EloTelTagView : public QObject , public QGraphicsEllipseItem{
+    Q_OBJECT
+private slots:
+    void onTimeOut();
 private:
     EloTelTag* tagModel;
     QGraphicsTextItem* label;
     QTimer * radarTemp;
 
 public:
-    EloTelTagView(EloTelTag* model, QGraphicsItem* parent = nullptr);
+    EloTelTagView(EloTelTag* model, Territory *territory, QGraphicsItem* parent = nullptr);
     void updatePosition();
 };
 

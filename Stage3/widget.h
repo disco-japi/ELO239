@@ -31,9 +31,6 @@ private slots:
 
 private:
     Territory*                 territoryModel;
-    std::vector<Cellular*>     celularesModels;
-    std::vector<EloTelTag*>    tagsModels;
-    std::vector<Tablet*>       tabletsModels;
 
     TerritoryView*             territoryView;
     std::vector<CellularView*> celularesViews;

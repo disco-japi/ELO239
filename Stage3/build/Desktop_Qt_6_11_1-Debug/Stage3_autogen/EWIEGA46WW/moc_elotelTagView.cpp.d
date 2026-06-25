@@ -1,8 +1,13 @@
 /home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/Stage3_autogen/EWIEGA46WW/moc_elotelTagView.cpp: /home/discojapi/Proyectos/ELO239/Stage3/elotelTagView.h \
   /home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/Stage3_autogen/moc_predefs.h \
+  /home/discojapi/Proyectos/ELO239/Stage3/cellular.h \
   /home/discojapi/Proyectos/ELO239/Stage3/elotelTag.h \
   /home/discojapi/Proyectos/ELO239/Stage3/equipo.h \
+  /home/discojapi/Proyectos/ELO239/Stage3/etnube.h \
+  /home/discojapi/Proyectos/ELO239/Stage3/tablet.h \
+  /home/discojapi/Proyectos/ELO239/Stage3/territory.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/QObject \
+  /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/QPointF \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/QTimer \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/q17memory.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/q20bit.h \

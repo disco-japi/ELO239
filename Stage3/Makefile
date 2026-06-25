@@ -162,74 +162,74 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Stage2
+# Target rules for targets named Stage3
 
 # Build rule for target.
-Stage2: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Stage2
-.PHONY : Stage2
+Stage3: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Stage3
+.PHONY : Stage3
 
 # fast build rule for target.
-Stage2/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/build
-.PHONY : Stage2/fast
+Stage3/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/build
+.PHONY : Stage3/fast
 
 #=============================================================================
-# Target rules for targets named Stage2_autogen_timestamp_deps
+# Target rules for targets named Stage3_autogen_timestamp_deps
 
 # Build rule for target.
-Stage2_autogen_timestamp_deps: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Stage2_autogen_timestamp_deps
-.PHONY : Stage2_autogen_timestamp_deps
+Stage3_autogen_timestamp_deps: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Stage3_autogen_timestamp_deps
+.PHONY : Stage3_autogen_timestamp_deps
 
 # fast build rule for target.
-Stage2_autogen_timestamp_deps/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2_autogen_timestamp_deps.dir/build.make CMakeFiles/Stage2_autogen_timestamp_deps.dir/build
-.PHONY : Stage2_autogen_timestamp_deps/fast
+Stage3_autogen_timestamp_deps/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3_autogen_timestamp_deps.dir/build.make CMakeFiles/Stage3_autogen_timestamp_deps.dir/build
+.PHONY : Stage3_autogen_timestamp_deps/fast
 
 #=============================================================================
-# Target rules for targets named Stage2_autogen
+# Target rules for targets named Stage3_autogen
 
 # Build rule for target.
-Stage2_autogen: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Stage2_autogen
-.PHONY : Stage2_autogen
+Stage3_autogen: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Stage3_autogen
+.PHONY : Stage3_autogen
 
 # fast build rule for target.
-Stage2_autogen/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2_autogen.dir/build.make CMakeFiles/Stage2_autogen.dir/build
-.PHONY : Stage2_autogen/fast
+Stage3_autogen/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3_autogen.dir/build.make CMakeFiles/Stage3_autogen.dir/build
+.PHONY : Stage3_autogen/fast
 
-Stage2_autogen/mocs_compilation.o: Stage2_autogen/mocs_compilation.cpp.o
-.PHONY : Stage2_autogen/mocs_compilation.o
+Stage3_autogen/mocs_compilation.o: Stage3_autogen/mocs_compilation.cpp.o
+.PHONY : Stage3_autogen/mocs_compilation.o
 
 # target to build an object file
-Stage2_autogen/mocs_compilation.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/Stage2_autogen/mocs_compilation.cpp.o
-.PHONY : Stage2_autogen/mocs_compilation.cpp.o
+Stage3_autogen/mocs_compilation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/Stage3_autogen/mocs_compilation.cpp.o
+.PHONY : Stage3_autogen/mocs_compilation.cpp.o
 
-Stage2_autogen/mocs_compilation.i: Stage2_autogen/mocs_compilation.cpp.i
-.PHONY : Stage2_autogen/mocs_compilation.i
+Stage3_autogen/mocs_compilation.i: Stage3_autogen/mocs_compilation.cpp.i
+.PHONY : Stage3_autogen/mocs_compilation.i
 
 # target to preprocess a source file
-Stage2_autogen/mocs_compilation.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/Stage2_autogen/mocs_compilation.cpp.i
-.PHONY : Stage2_autogen/mocs_compilation.cpp.i
+Stage3_autogen/mocs_compilation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/Stage3_autogen/mocs_compilation.cpp.i
+.PHONY : Stage3_autogen/mocs_compilation.cpp.i
 
-Stage2_autogen/mocs_compilation.s: Stage2_autogen/mocs_compilation.cpp.s
-.PHONY : Stage2_autogen/mocs_compilation.s
+Stage3_autogen/mocs_compilation.s: Stage3_autogen/mocs_compilation.cpp.s
+.PHONY : Stage3_autogen/mocs_compilation.s
 
 # target to generate assembly for a file
-Stage2_autogen/mocs_compilation.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/Stage2_autogen/mocs_compilation.cpp.s
-.PHONY : Stage2_autogen/mocs_compilation.cpp.s
+Stage3_autogen/mocs_compilation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/Stage3_autogen/mocs_compilation.cpp.s
+.PHONY : Stage3_autogen/mocs_compilation.cpp.s
 
 cellular.o: cellular.cpp.o
 .PHONY : cellular.o
 
 # target to build an object file
 cellular.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/cellular.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/cellular.cpp.o
 .PHONY : cellular.cpp.o
 
 cellular.i: cellular.cpp.i
@@ -237,7 +237,7 @@ cellular.i: cellular.cpp.i
 
 # target to preprocess a source file
 cellular.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/cellular.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/cellular.cpp.i
 .PHONY : cellular.cpp.i
 
 cellular.s: cellular.cpp.s
@@ -245,7 +245,7 @@ cellular.s: cellular.cpp.s
 
 # target to generate assembly for a file
 cellular.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/cellular.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/cellular.cpp.s
 .PHONY : cellular.cpp.s
 
 cellularview.o: cellularview.cpp.o
@@ -253,7 +253,7 @@ cellularview.o: cellularview.cpp.o
 
 # target to build an object file
 cellularview.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/cellularview.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/cellularview.cpp.o
 .PHONY : cellularview.cpp.o
 
 cellularview.i: cellularview.cpp.i
@@ -261,7 +261,7 @@ cellularview.i: cellularview.cpp.i
 
 # target to preprocess a source file
 cellularview.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/cellularview.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/cellularview.cpp.i
 .PHONY : cellularview.cpp.i
 
 cellularview.s: cellularview.cpp.s
@@ -269,7 +269,7 @@ cellularview.s: cellularview.cpp.s
 
 # target to generate assembly for a file
 cellularview.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/cellularview.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/cellularview.cpp.s
 .PHONY : cellularview.cpp.s
 
 elotelTag.o: elotelTag.cpp.o
@@ -277,7 +277,7 @@ elotelTag.o: elotelTag.cpp.o
 
 # target to build an object file
 elotelTag.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/elotelTag.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/elotelTag.cpp.o
 .PHONY : elotelTag.cpp.o
 
 elotelTag.i: elotelTag.cpp.i
@@ -285,7 +285,7 @@ elotelTag.i: elotelTag.cpp.i
 
 # target to preprocess a source file
 elotelTag.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/elotelTag.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/elotelTag.cpp.i
 .PHONY : elotelTag.cpp.i
 
 elotelTag.s: elotelTag.cpp.s
@@ -293,7 +293,7 @@ elotelTag.s: elotelTag.cpp.s
 
 # target to generate assembly for a file
 elotelTag.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/elotelTag.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/elotelTag.cpp.s
 .PHONY : elotelTag.cpp.s
 
 elotelTagView.o: elotelTagView.cpp.o
@@ -301,7 +301,7 @@ elotelTagView.o: elotelTagView.cpp.o
 
 # target to build an object file
 elotelTagView.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/elotelTagView.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/elotelTagView.cpp.o
 .PHONY : elotelTagView.cpp.o
 
 elotelTagView.i: elotelTagView.cpp.i
@@ -309,7 +309,7 @@ elotelTagView.i: elotelTagView.cpp.i
 
 # target to preprocess a source file
 elotelTagView.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/elotelTagView.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/elotelTagView.cpp.i
 .PHONY : elotelTagView.cpp.i
 
 elotelTagView.s: elotelTagView.cpp.s
@@ -317,7 +317,7 @@ elotelTagView.s: elotelTagView.cpp.s
 
 # target to generate assembly for a file
 elotelTagView.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/elotelTagView.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/elotelTagView.cpp.s
 .PHONY : elotelTagView.cpp.s
 
 equipo.o: equipo.cpp.o
@@ -325,7 +325,7 @@ equipo.o: equipo.cpp.o
 
 # target to build an object file
 equipo.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/equipo.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/equipo.cpp.o
 .PHONY : equipo.cpp.o
 
 equipo.i: equipo.cpp.i
@@ -333,7 +333,7 @@ equipo.i: equipo.cpp.i
 
 # target to preprocess a source file
 equipo.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/equipo.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/equipo.cpp.i
 .PHONY : equipo.cpp.i
 
 equipo.s: equipo.cpp.s
@@ -341,15 +341,39 @@ equipo.s: equipo.cpp.s
 
 # target to generate assembly for a file
 equipo.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/equipo.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/equipo.cpp.s
 .PHONY : equipo.cpp.s
+
+etnube.o: etnube.cpp.o
+.PHONY : etnube.o
+
+# target to build an object file
+etnube.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/etnube.cpp.o
+.PHONY : etnube.cpp.o
+
+etnube.i: etnube.cpp.i
+.PHONY : etnube.i
+
+# target to preprocess a source file
+etnube.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/etnube.cpp.i
+.PHONY : etnube.cpp.i
+
+etnube.s: etnube.cpp.s
+.PHONY : etnube.s
+
+# target to generate assembly for a file
+etnube.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/etnube.cpp.s
+.PHONY : etnube.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -357,7 +381,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -365,7 +389,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 tablet.o: tablet.cpp.o
@@ -373,7 +397,7 @@ tablet.o: tablet.cpp.o
 
 # target to build an object file
 tablet.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/tablet.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/tablet.cpp.o
 .PHONY : tablet.cpp.o
 
 tablet.i: tablet.cpp.i
@@ -381,7 +405,7 @@ tablet.i: tablet.cpp.i
 
 # target to preprocess a source file
 tablet.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/tablet.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/tablet.cpp.i
 .PHONY : tablet.cpp.i
 
 tablet.s: tablet.cpp.s
@@ -389,7 +413,7 @@ tablet.s: tablet.cpp.s
 
 # target to generate assembly for a file
 tablet.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/tablet.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/tablet.cpp.s
 .PHONY : tablet.cpp.s
 
 tabletView.o: tabletView.cpp.o
@@ -397,7 +421,7 @@ tabletView.o: tabletView.cpp.o
 
 # target to build an object file
 tabletView.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/tabletView.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/tabletView.cpp.o
 .PHONY : tabletView.cpp.o
 
 tabletView.i: tabletView.cpp.i
@@ -405,7 +429,7 @@ tabletView.i: tabletView.cpp.i
 
 # target to preprocess a source file
 tabletView.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/tabletView.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/tabletView.cpp.i
 .PHONY : tabletView.cpp.i
 
 tabletView.s: tabletView.cpp.s
@@ -413,7 +437,7 @@ tabletView.s: tabletView.cpp.s
 
 # target to generate assembly for a file
 tabletView.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/tabletView.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/tabletView.cpp.s
 .PHONY : tabletView.cpp.s
 
 territory.o: territory.cpp.o
@@ -421,7 +445,7 @@ territory.o: territory.cpp.o
 
 # target to build an object file
 territory.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/territory.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/territory.cpp.o
 .PHONY : territory.cpp.o
 
 territory.i: territory.cpp.i
@@ -429,7 +453,7 @@ territory.i: territory.cpp.i
 
 # target to preprocess a source file
 territory.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/territory.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/territory.cpp.i
 .PHONY : territory.cpp.i
 
 territory.s: territory.cpp.s
@@ -437,7 +461,7 @@ territory.s: territory.cpp.s
 
 # target to generate assembly for a file
 territory.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/territory.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/territory.cpp.s
 .PHONY : territory.cpp.s
 
 territoryview.o: territoryview.cpp.o
@@ -445,7 +469,7 @@ territoryview.o: territoryview.cpp.o
 
 # target to build an object file
 territoryview.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/territoryview.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/territoryview.cpp.o
 .PHONY : territoryview.cpp.o
 
 territoryview.i: territoryview.cpp.i
@@ -453,7 +477,7 @@ territoryview.i: territoryview.cpp.i
 
 # target to preprocess a source file
 territoryview.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/territoryview.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/territoryview.cpp.i
 .PHONY : territoryview.cpp.i
 
 territoryview.s: territoryview.cpp.s
@@ -461,7 +485,7 @@ territoryview.s: territoryview.cpp.s
 
 # target to generate assembly for a file
 territoryview.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/territoryview.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/territoryview.cpp.s
 .PHONY : territoryview.cpp.s
 
 widget.o: widget.cpp.o
@@ -469,7 +493,7 @@ widget.o: widget.cpp.o
 
 # target to build an object file
 widget.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/widget.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/widget.cpp.o
 .PHONY : widget.cpp.o
 
 widget.i: widget.cpp.i
@@ -477,7 +501,7 @@ widget.i: widget.cpp.i
 
 # target to preprocess a source file
 widget.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/widget.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/widget.cpp.i
 .PHONY : widget.cpp.i
 
 widget.s: widget.cpp.s
@@ -485,7 +509,7 @@ widget.s: widget.cpp.s
 
 # target to generate assembly for a file
 widget.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage2.dir/build.make CMakeFiles/Stage2.dir/widget.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage3.dir/build.make CMakeFiles/Stage3.dir/widget.cpp.s
 .PHONY : widget.cpp.s
 
 # Help Target
@@ -500,12 +524,12 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... Stage2_autogen"
-	@echo "... Stage2_autogen_timestamp_deps"
-	@echo "... Stage2"
-	@echo "... Stage2_autogen/mocs_compilation.o"
-	@echo "... Stage2_autogen/mocs_compilation.i"
-	@echo "... Stage2_autogen/mocs_compilation.s"
+	@echo "... Stage3_autogen"
+	@echo "... Stage3_autogen_timestamp_deps"
+	@echo "... Stage3"
+	@echo "... Stage3_autogen/mocs_compilation.o"
+	@echo "... Stage3_autogen/mocs_compilation.i"
+	@echo "... Stage3_autogen/mocs_compilation.s"
 	@echo "... cellular.o"
 	@echo "... cellular.i"
 	@echo "... cellular.s"
@@ -521,6 +545,9 @@ help:
 	@echo "... equipo.o"
 	@echo "... equipo.i"
 	@echo "... equipo.s"
+	@echo "... etnube.o"
+	@echo "... etnube.i"
+	@echo "... etnube.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

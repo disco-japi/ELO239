@@ -2,8 +2,10 @@
 #define EQUIPO_H
 
 #include <string>
+#include <QObject>
 
-class Equipo {
+class Equipo : public QObject  {
+    Q_OBJECT
 protected:
     std::string nombreDueno;
     double posX;
@@ -23,7 +25,7 @@ public:
     int getRapidez() const;
     int getAngulo() const;
     int getDeltaAngulo() const;
-    bool enRango(Equipo equipo);
+    bool enRango(Equipo * equipo);
 
     // Movimiento: avanza dt segundos dentro de los límites [0,w]x[0,h]
     void mover(double dt, int w, int h);

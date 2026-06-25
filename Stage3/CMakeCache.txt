@@ -173,7 +173,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=Stage2
+CMAKE_PROJECT_NAME:STATIC=Stage3
 
 //Value Computed by CMake
 CMAKE_PROJECT_SPDX_LICENSE:STATIC=
@@ -324,6 +324,15 @@ Stage2_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 Stage2_SOURCE_DIR:STATIC=/home/discojapi/Proyectos/ELO239/Stage3
+
+//Value Computed by CMake
+Stage3_BINARY_DIR:STATIC=/home/discojapi/Proyectos/ELO239/Stage3
+
+//Value Computed by CMake
+Stage3_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+Stage3_SOURCE_DIR:STATIC=/home/discojapi/Proyectos/ELO239/Stage3
 
 //Path to a program.
 Vulkan_GLSLANG_VALIDATOR_EXECUTABLE:FILEPATH=/usr/bin/glslangValidator

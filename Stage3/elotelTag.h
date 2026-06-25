@@ -4,6 +4,7 @@
 #include "equipo.h"
 
 class EloTelTag : public Equipo {
+    Q_OBJECT
 private:
     std::string nombreTag;
 

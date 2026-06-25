@@ -7,8 +7,10 @@
 #include <QObject>
 #include "cellular.h"
 
-class CellularView : public QGraphicsRectItem {
-    // Q_OBJECT
+class CellularView : public QObject , public QGraphicsRectItem {
+    Q_OBJECT
+private slots:
+    //void onClick();
 private:
     Cellular* cellularModel;
     QGraphicsTextItem* label;

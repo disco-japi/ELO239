@@ -18,7 +18,7 @@ Widget::Widget(QString configFilePath, QWidget *parent)
     , territoryView(nullptr)
 {
     nube = new ETNube;
-    setWindowTitle("EloTelTag Simulation in C++ and Qt: Stage 2");
+    setWindowTitle("EloTelTag Simulation in C++ and Qt: Stage 3");
     resize(1000, 700);
 
     QMenuBar* menuBar = new QMenuBar(this);
@@ -44,9 +44,9 @@ Widget::~Widget()
 {
     delete territoryModel;
     delete nube;
-    for (auto c : celularesModels) delete c;
-    for (auto t : tagsModels)      delete t;
-    for (auto tb: tabletsModels)   delete tb;
+    for (auto c : territoryModel->celularesModels) delete c;
+    for (auto t : territoryModel->tagsModels)      delete t;
+    for (auto tb: territoryModel->tabletsModels)   delete tb;
 }
 
 void Widget::onPlay()
@@ -66,16 +66,16 @@ void Widget::onTimerTick()
     int w = (int)territoryView->getScene()->sceneRect().width();
     int h = (int)territoryView->getScene()->sceneRect().height();
 
-    for (size_t i = 0; i < celularesModels.size(); i++) {
-        celularesModels[i]->mover(deltaTiempo, w, h);
+    for (size_t i = 0; i < territoryModel->celularesModels.size(); i++) {
+        territoryModel->celularesModels[i]->mover(deltaTiempo, w, h);
         celularesViews[i]->updatePosition();
     }
-    for (size_t i = 0; i < tagsModels.size(); i++) {
-        tagsModels[i]->mover(deltaTiempo, w, h);
+    for (size_t i = 0; i < territoryModel->tagsModels.size(); i++) {
+        territoryModel->tagsModels[i]->mover(deltaTiempo, w, h);
         tagsViews[i]->updatePosition();
     }
-    for (size_t i = 0; i < tabletsModels.size(); i++) {
-        tabletsModels[i]->mover(deltaTiempo, w, h);
+    for (size_t i = 0; i < territoryModel->tabletsModels.size(); i++) {
+        territoryModel->tabletsModels[i]->mover(deltaTiempo, w, h);
         tabletsViews[i]->updatePosition();
     }
 }
@@ -93,7 +93,6 @@ void Widget::cargarConfiguracion(const QString& filePath)
 
     QTextStream in(&file);
     in.setLocale(QLocale::C);
-
     QString bgImage;
     in >> bgImage;
 
@@ -112,8 +111,7 @@ void Widget::cargarConfiguracion(const QString& filePath)
         in >> cx >> cy >> cvel >> cang >> cdang;
 
         Cellular* cel = new Cellular(nombrePersona.toStdString(), cx, cy, cvel, cang, cdang, nube);
-        celularesModels.push_back(cel);
-        cel->imprimirPosicion();
+        territoryModel->celularesModels.push_back(cel);
 
         CellularView* cView = new CellularView(cel);
         nube->updateLocation(nombrePersona.toStdString(), "Celular", cx, cy);
@@ -128,9 +126,9 @@ void Widget::cargarConfiguracion(const QString& filePath)
 
             EloTelTag* tag = new EloTelTag(nombrePersona.toStdString(),
                                            tagName.toStdString(), tx, ty, tvel, tang, tdang);
-            tagsModels.push_back(tag);
+            territoryModel->tagsModels.push_back(tag);
 
-            EloTelTagView* tView = new EloTelTagView(tag);
+            EloTelTagView* tView = new EloTelTagView(tag, territoryModel);
             tView->setZValue(8);
             tagsViews.push_back(tView);
             territoryView->getScene()->addItem(tView);
@@ -142,7 +140,7 @@ void Widget::cargarConfiguracion(const QString& filePath)
             in >> tbx >> tby >> tbvel >> tbang >> tbdang;
 
             Tablet* tab = new Tablet(nombrePersona.toStdString(), tbx, tby, tbvel, tbang, tbdang, nube);
-            tabletsModels.push_back(tab);
+            territoryModel->tabletsModels.push_back(tab);
 
             TabletView* tabView = new TabletView(tab);
             tabView->setZValue(9);
@@ -156,8 +154,8 @@ void Widget::cargarConfiguracion(const QString& filePath)
 }
 
 Cellular * Widget::findNearByCellular(Equipo equipo){
-    for (Cellular * cell : celularesModels){
-        if (equipo.enRango(*cell)){
+    for (Cellular * cell : territoryModel->celularesModels){
+        if (equipo.enRango(cell)){
             return cell;
         }
     }

@@ -12,7 +12,3 @@ void Cellular::reportarUbicacionTag(EloTelTag tag){
 void Cellular::reportarUbicacionTablet(Tablet tab){
     nube->updateLocation(tab.getNombreDueno(),"Tablet",this->posX, this->posY);
 }
-
-void Cellular::imprimirPosicion() const {
-    std::cout << "Celular de " << nombreDueno << " en posicion: (" << posX << ", " << posY << ")" << std::endl;
-}

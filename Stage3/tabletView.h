@@ -7,8 +7,11 @@
 #include <QObject>
 #include "tablet.h"
 
-class TabletView : public QGraphicsRectItem {
-    // Q_OBJECT
+class TabletView : public QObject, public QGraphicsRectItem  {
+    Q_OBJECT
+public slots:
+    //void onClick();
+    //void onTimeOut();
 private:
     Tablet* tabletModel;
     QGraphicsTextItem* label;

@@ -6,6 +6,9 @@
 #include "etnube.h"
 
 class Tablet : public Equipo {
+    Q_OBJECT
+private slots:
+    //void onETNube();
 private:
     ETNube *nube;
     QTimer * radarTemp;

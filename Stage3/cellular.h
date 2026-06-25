@@ -1,4 +1,4 @@
-#ifndef CELLULAR_H
+    #ifndef CELLULAR_H
 #define CELLULAR_H
 
 #include "equipo.h"
@@ -7,6 +7,9 @@
 #include "tablet.h"
 
 class Cellular : public Equipo {
+    Q_OBJECT
+private slots:
+   // void onETNube();
 private:
     ETNube *nube;
 public:
@@ -14,7 +17,6 @@ public:
     ~Cellular() override = default;
     void reportarUbicacionTag(EloTelTag tag);
     void reportarUbicacionTablet(Tablet tab);
-    void imprimirPosicion() const;
 };
 
 #endif // CELLULAR_H
