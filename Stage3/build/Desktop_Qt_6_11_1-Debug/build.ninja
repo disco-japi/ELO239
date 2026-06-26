@@ -179,6 +179,36 @@ build CMakeFiles/Stage3.dir/etnube.cpp.o: CXX_COMPILER__Stage3_unscanned_Debug /
   OBJECT_FILE_DIR = CMakeFiles/Stage3.dir
   TARGET_SUPPORT_DIR = CMakeFiles/Stage3.dir
 
+build CMakeFiles/Stage3.dir/radarCircle.cpp.o: CXX_COMPILER__Stage3_unscanned_Debug /home/discojapi/Proyectos/ELO239/Stage3/radarCircle.cpp || cmake_object_order_depends_target_Stage3
+  CONFIG = Debug
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_QML_DEBUG -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Stage3.dir/radarCircle.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always -fPIC
+  INCLUDES = -I/home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/Stage3_autogen/include -isystem /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore -isystem /home/discojapi/Qt/6.11.1/gcc_64/include -isystem /home/discojapi/Qt/6.11.1/gcc_64/mkspecs/linux-g++ -isystem /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets -isystem /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui
+  OBJECT_DIR = CMakeFiles/Stage3.dir
+  OBJECT_FILE_DIR = CMakeFiles/Stage3.dir
+  TARGET_SUPPORT_DIR = CMakeFiles/Stage3.dir
+
+build CMakeFiles/Stage3.dir/view.cpp.o: CXX_COMPILER__Stage3_unscanned_Debug /home/discojapi/Proyectos/ELO239/Stage3/view.cpp || cmake_object_order_depends_target_Stage3
+  CONFIG = Debug
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_QML_DEBUG -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Stage3.dir/view.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always -fPIC
+  INCLUDES = -I/home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/Stage3_autogen/include -isystem /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore -isystem /home/discojapi/Qt/6.11.1/gcc_64/include -isystem /home/discojapi/Qt/6.11.1/gcc_64/mkspecs/linux-g++ -isystem /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets -isystem /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui
+  OBJECT_DIR = CMakeFiles/Stage3.dir
+  OBJECT_FILE_DIR = CMakeFiles/Stage3.dir
+  TARGET_SUPPORT_DIR = CMakeFiles/Stage3.dir
+
+build CMakeFiles/Stage3.dir/infowindow.cpp.o: CXX_COMPILER__Stage3_unscanned_Debug /home/discojapi/Proyectos/ELO239/Stage3/infowindow.cpp || cmake_object_order_depends_target_Stage3
+  CONFIG = Debug
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_QML_DEBUG -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/Stage3.dir/infowindow.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always -fPIC
+  INCLUDES = -I/home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/Stage3_autogen/include -isystem /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore -isystem /home/discojapi/Qt/6.11.1/gcc_64/include -isystem /home/discojapi/Qt/6.11.1/gcc_64/mkspecs/linux-g++ -isystem /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets -isystem /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui
+  OBJECT_DIR = CMakeFiles/Stage3.dir
+  OBJECT_FILE_DIR = CMakeFiles/Stage3.dir
+  TARGET_SUPPORT_DIR = CMakeFiles/Stage3.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Stage3
@@ -187,7 +217,7 @@ build CMakeFiles/Stage3.dir/etnube.cpp.o: CXX_COMPILER__Stage3_unscanned_Debug /
 #############################################
 # Link the executable Stage3
 
-build Stage3: CXX_EXECUTABLE_LINKER__Stage3_Debug CMakeFiles/Stage3.dir/Stage3_autogen/mocs_compilation.cpp.o CMakeFiles/Stage3.dir/main.cpp.o CMakeFiles/Stage3.dir/widget.cpp.o CMakeFiles/Stage3.dir/equipo.cpp.o CMakeFiles/Stage3.dir/cellular.cpp.o CMakeFiles/Stage3.dir/territory.cpp.o CMakeFiles/Stage3.dir/cellularview.cpp.o CMakeFiles/Stage3.dir/territoryview.cpp.o CMakeFiles/Stage3.dir/elotelTag.cpp.o CMakeFiles/Stage3.dir/elotelTagView.cpp.o CMakeFiles/Stage3.dir/tablet.cpp.o CMakeFiles/Stage3.dir/tabletView.cpp.o CMakeFiles/Stage3.dir/etnube.cpp.o | /home/discojapi/Qt/6.11.1/gcc_64/lib/libQt6Widgets.so.6.11.1 /home/discojapi/Qt/6.11.1/gcc_64/lib/libQt6Gui.so.6.11.1 /usr/lib/libGLX.so /usr/lib/libOpenGL.so /home/discojapi/Qt/6.11.1/gcc_64/lib/libQt6Core.so.6.11.1 || Stage3_autogen Stage3_autogen_timestamp_deps
+build Stage3: CXX_EXECUTABLE_LINKER__Stage3_Debug CMakeFiles/Stage3.dir/Stage3_autogen/mocs_compilation.cpp.o CMakeFiles/Stage3.dir/main.cpp.o CMakeFiles/Stage3.dir/widget.cpp.o CMakeFiles/Stage3.dir/equipo.cpp.o CMakeFiles/Stage3.dir/cellular.cpp.o CMakeFiles/Stage3.dir/territory.cpp.o CMakeFiles/Stage3.dir/cellularview.cpp.o CMakeFiles/Stage3.dir/territoryview.cpp.o CMakeFiles/Stage3.dir/elotelTag.cpp.o CMakeFiles/Stage3.dir/elotelTagView.cpp.o CMakeFiles/Stage3.dir/tablet.cpp.o CMakeFiles/Stage3.dir/tabletView.cpp.o CMakeFiles/Stage3.dir/etnube.cpp.o CMakeFiles/Stage3.dir/radarCircle.cpp.o CMakeFiles/Stage3.dir/view.cpp.o CMakeFiles/Stage3.dir/infowindow.cpp.o | /home/discojapi/Qt/6.11.1/gcc_64/lib/libQt6Widgets.so.6.11.1 /home/discojapi/Qt/6.11.1/gcc_64/lib/libQt6Gui.so.6.11.1 /usr/lib/libGLX.so /usr/lib/libOpenGL.so /home/discojapi/Qt/6.11.1/gcc_64/lib/libQt6Core.so.6.11.1 || Stage3_autogen Stage3_autogen_timestamp_deps
   CONFIG = Debug
   DEP_FILE = CMakeFiles/Stage3.dir/link.d
   FLAGS = -g

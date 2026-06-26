@@ -1083,7 +1083,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "Stage2"
+			"value" : "Stage3"
 		},
 		{
 			"name" : "CMAKE_PROJECT_SPDX_LICENSE",
@@ -6895,6 +6895,42 @@
 		},
 		{
 			"name" : "Stage2_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/discojapi/Proyectos/ELO239/Stage3"
+		},
+		{
+			"name" : "Stage3_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug"
+		},
+		{
+			"name" : "Stage3_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "Stage3_SOURCE_DIR",
 			"properties" : 
 			[
 				{

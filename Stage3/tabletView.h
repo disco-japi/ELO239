@@ -6,19 +6,16 @@
 #include <QBrush>
 #include <QObject>
 #include "tablet.h"
+#include "view.h"
 
-class TabletView : public QObject, public QGraphicsRectItem  {
+class TabletView : public View, public QGraphicsRectItem  {
     Q_OBJECT
-public slots:
-    //void onClick();
-    //void onTimeOut();
 private:
     Tablet* tabletModel;
     QGraphicsTextItem* label;
 
 public:
     TabletView(Tablet* model, QGraphicsItem* parent = nullptr);
-    void updatePosition();
 };
 
 #endif // TABLETVIEW_H

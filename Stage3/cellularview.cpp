@@ -2,8 +2,7 @@
 #include <QString>
 
 CellularView::CellularView(Cellular* model, QGraphicsItem* parent)
-    : QGraphicsRectItem(parent), cellularModel(model) {
-
+    : QGraphicsRectItem(parent), View(model){
     setRect(-6, -12, 12, 24);
     setBrush(QBrush(Qt::blue));
 
@@ -16,8 +15,3 @@ CellularView::CellularView(Cellular* model, QGraphicsItem* parent)
     updatePosition();
 }
 
-void CellularView::updatePosition() {
-    if (cellularModel) {
-        setPos(cellularModel->getX(), cellularModel->getY());
-    }
-}

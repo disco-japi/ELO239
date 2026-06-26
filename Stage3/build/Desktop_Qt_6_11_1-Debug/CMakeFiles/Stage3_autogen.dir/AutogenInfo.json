@@ -571,6 +571,18 @@
 			null
 		],
 		[
+			"/home/discojapi/Proyectos/ELO239/Stage3/infowindow.h",
+			"MU",
+			"EWIEGA46WW/moc_infowindow.cpp",
+			null
+		],
+		[
+			"/home/discojapi/Proyectos/ELO239/Stage3/radarCircle.h",
+			"MU",
+			"EWIEGA46WW/moc_radarCircle.cpp",
+			null
+		],
+		[
 			"/home/discojapi/Proyectos/ELO239/Stage3/tablet.h",
 			"MU",
 			"EWIEGA46WW/moc_tablet.cpp",
@@ -592,6 +604,12 @@
 			"/home/discojapi/Proyectos/ELO239/Stage3/territoryview.h",
 			"MU",
 			"EWIEGA46WW/moc_territoryview.cpp",
+			null
+		],
+		[
+			"/home/discojapi/Proyectos/ELO239/Stage3/view.h",
+			"MU",
+			"EWIEGA46WW/moc_view.cpp",
 			null
 		],
 		[
@@ -672,7 +690,9 @@
 		],
 		[ "/home/discojapi/Proyectos/ELO239/Stage3/equipo.cpp", "MU", null ],
 		[ "/home/discojapi/Proyectos/ELO239/Stage3/etnube.cpp", "MU", null ],
+		[ "/home/discojapi/Proyectos/ELO239/Stage3/infowindow.cpp", "MU", null ],
 		[ "/home/discojapi/Proyectos/ELO239/Stage3/main.cpp", "MU", null ],
+		[ "/home/discojapi/Proyectos/ELO239/Stage3/radarCircle.cpp", "MU", null ],
 		[ "/home/discojapi/Proyectos/ELO239/Stage3/tablet.cpp", "MU", null ],
 		[ "/home/discojapi/Proyectos/ELO239/Stage3/tabletView.cpp", "MU", null ],
 		[ "/home/discojapi/Proyectos/ELO239/Stage3/territory.cpp", "MU", null ],
@@ -681,6 +701,7 @@
 			"MU",
 			null
 		],
+		[ "/home/discojapi/Proyectos/ELO239/Stage3/view.cpp", "MU", null ],
 		[ "/home/discojapi/Proyectos/ELO239/Stage3/widget.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],

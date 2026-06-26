@@ -51,7 +51,7 @@ template <> constexpr inline auto CellularView::qt_create_metaobjectdata<qt_meta
             qt_methods, qt_properties, qt_enums);
 }
 Q_CONSTINIT const QMetaObject CellularView::staticMetaObject = { {
-    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
+    QMetaObject::SuperData::link<View::staticMetaObject>(),
     qt_staticMetaObjectStaticContent<qt_meta_tag_ZN12CellularViewE_t>.stringdata,
     qt_staticMetaObjectStaticContent<qt_meta_tag_ZN12CellularViewE_t>.data,
     qt_static_metacall,
@@ -81,12 +81,12 @@ void *CellularView::qt_metacast(const char *_clname)
         return static_cast<void*>(this);
     if (!strcmp(_clname, "QGraphicsRectItem"))
         return static_cast< QGraphicsRectItem*>(this);
-    return QObject::qt_metacast(_clname);
+    return View::qt_metacast(_clname);
 }
 
 int CellularView::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QObject::qt_metacall(_c, _id, _a);
+    _id = View::qt_metacall(_c, _id, _a);
     return _id;
 }
 QT_WARNING_POP

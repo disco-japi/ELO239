@@ -6,18 +6,17 @@
 #include <QBrush>
 #include <QObject>
 #include "cellular.h"
+#include "view.h"
 
-class CellularView : public QObject , public QGraphicsRectItem {
+class CellularView : public View , public QGraphicsRectItem {
     Q_OBJECT
 private slots:
     //void onClick();
 private:
-    Cellular* cellularModel;
     QGraphicsTextItem* label;
 
 public:
     CellularView(Cellular* model, QGraphicsItem* parent = nullptr);
-    void updatePosition();
 };
 
 #endif // CELLULARVIEW_H

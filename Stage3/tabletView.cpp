@@ -2,7 +2,7 @@
 #include <QString>
 
 TabletView::TabletView(Tablet* model, QGraphicsItem* parent)
-    : QGraphicsRectItem(parent), tabletModel(model) {
+    : QGraphicsRectItem(parent), View(model) {
 
     setRect(-8, -5, 16, 10);
     setBrush(QBrush(Qt::green));
@@ -14,10 +14,4 @@ TabletView::TabletView(Tablet* model, QGraphicsItem* parent)
     label->setScale(0.7);
 
     updatePosition();
-}
-
-void TabletView::updatePosition() {
-    if (tabletModel) {
-        setPos(tabletModel->getX(), tabletModel->getY());
-    }
 }

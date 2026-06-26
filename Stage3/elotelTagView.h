@@ -2,28 +2,18 @@
 #define ELOTELTAGVIEW_H
 
 #include <QGraphicsEllipseItem>
-#include <QGraphicsTextItem>
+#include <QGraphicsSceneMouseEvent>
 #include <QBrush>
 #include <QTimer>
 #include <QObject>
 #include "elotelTag.h"
 #include "territory.h"
+#include "view.h"
 
-class EloTelTagView : public QObject , public QGraphicsEllipseItem{
+class EloTelTagView : public  View, public QGraphicsEllipseItem{
     Q_OBJECT
-private slots:
-    void onTimeOut();
-private:
-    EloTelTag* tagModel;
-    QGraphicsTextItem* label;
-    QTimer * radarTemp;
-    Territory * territory;
-
 public:
-    EloTelTagView(EloTelTag* model, Territory *territory, QGraphicsItem* parent = nullptr);
-    void updatePosition();
-    void startTimer();
-    void stopTimer();
+    EloTelTagView(EloTelTag* model, Territory *territory, QGraphicsItem* parent = nullptr, QObject *parentO = nullptr);
 };
 
 #endif // ELOTELTAGVIEW_H

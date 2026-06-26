@@ -9,6 +9,7 @@
 #include <QMenu>
 #include <QAction>
 #include <string.h>
+#include <iostream>
 
 Widget::Widget(QString configFilePath, QWidget *parent)
     : QWidget(parent)

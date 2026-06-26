@@ -6,6 +6,7 @@
   /home/discojapi/Proyectos/ELO239/Stage3/etnube.h \
   /home/discojapi/Proyectos/ELO239/Stage3/tablet.h \
   /home/discojapi/Proyectos/ELO239/Stage3/territory.h \
+  /home/discojapi/Proyectos/ELO239/Stage3/view.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/QObject \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/QPointF \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/QTimer \
@@ -47,6 +48,7 @@
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qcontainerinfo.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qcontainertools_impl.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qcontiguouscache.h \
+  /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qcoreevent.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qdarwinhelpers.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qdatastream.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qdeadlinetimer.h \
@@ -159,8 +161,10 @@
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qtransform.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qwindowdefs.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/QGraphicsEllipseItem \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/QGraphicsTextItem \
+  /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/QGraphicsItem \
+  /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/QGraphicsSceneMouseEvent \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/qgraphicsitem.h \
+  /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/qtwidgets-config.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/qtwidgetsexports.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/qtwidgetsglobal.h \

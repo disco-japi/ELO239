@@ -1,8 +1,12 @@
 /home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/Stage3_autogen/EWIEGA46WW/moc_tabletView.cpp: /home/discojapi/Proyectos/ELO239/Stage3/tabletView.h \
   /home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/Stage3_autogen/moc_predefs.h \
+  /home/discojapi/Proyectos/ELO239/Stage3/cellular.h \
+  /home/discojapi/Proyectos/ELO239/Stage3/elotelTag.h \
   /home/discojapi/Proyectos/ELO239/Stage3/equipo.h \
   /home/discojapi/Proyectos/ELO239/Stage3/etnube.h \
   /home/discojapi/Proyectos/ELO239/Stage3/tablet.h \
+  /home/discojapi/Proyectos/ELO239/Stage3/territory.h \
+  /home/discojapi/Proyectos/ELO239/Stage3/view.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/QObject \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/QPointF \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/QTimer \
@@ -155,6 +159,7 @@
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qtguiglobal.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qtransform.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qwindowdefs.h \
+  /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/QGraphicsItem \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/QGraphicsRectItem \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/QGraphicsTextItem \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtWidgets/qgraphicsitem.h \

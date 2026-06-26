@@ -20,6 +20,11 @@ qt_add_executable(Stage3
     tabletView.h tabletView.cpp
     etnube.h
     etnube.h etnube.cpp
+    radarCircle.h
+    radarCircle.cpp
+    view.h view.cpp
+    infowindow.h infowindow.cpp
+
 )
 
 target_link_libraries(Stage3
