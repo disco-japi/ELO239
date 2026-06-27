@@ -79,8 +79,6 @@ void *EloTelTagView::qt_metacast(const char *_clname)
     if (!_clname) return nullptr;
     if (!strcmp(_clname, qt_staticMetaObjectStaticContent<qt_meta_tag_ZN13EloTelTagViewE_t>.strings))
         return static_cast<void*>(this);
-    if (!strcmp(_clname, "QGraphicsEllipseItem"))
-        return static_cast< QGraphicsEllipseItem*>(this);
     return View::qt_metacast(_clname);
 }
 

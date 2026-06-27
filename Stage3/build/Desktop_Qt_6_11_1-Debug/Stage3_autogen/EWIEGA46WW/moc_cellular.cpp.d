@@ -1,12 +1,9 @@
 /home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/Stage3_autogen/EWIEGA46WW/moc_cellular.cpp: /home/discojapi/Proyectos/ELO239/Stage3/cellular.h \
   /home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/Stage3_autogen/moc_predefs.h \
-  /home/discojapi/Proyectos/ELO239/Stage3/elotelTag.h \
   /home/discojapi/Proyectos/ELO239/Stage3/equipo.h \
   /home/discojapi/Proyectos/ELO239/Stage3/etnube.h \
-  /home/discojapi/Proyectos/ELO239/Stage3/tablet.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/QObject \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/QPointF \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/QTimer \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/q17memory.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/q20bit.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/q20functional.h \
@@ -15,7 +12,6 @@
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/q20utility.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/q23type_traits.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/q23utility.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qabstracteventdispatcher.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qalgorithms.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qanystringview.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qarraydata.h \
@@ -25,7 +21,6 @@
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qatomic.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qatomic_cxx11.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qbasicatomic.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qbasictimer.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qbindingstorage.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qbytearray.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qbytearrayalgorithms.h \
@@ -44,8 +39,6 @@
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qcontainertools_impl.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qdarwinhelpers.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qdatastream.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qdeadlinetimer.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qeventloop.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qexceptionhandling.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qflags.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qfloat16.h \
@@ -105,7 +98,6 @@
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qtdeprecationmarkers.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qtenvironmentvariables.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qtformat_impl.h \
-  /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qtimer.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qtmetamacros.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qtnoop.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qtpreprocessorsupport.h \

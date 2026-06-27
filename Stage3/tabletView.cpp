@@ -1,12 +1,11 @@
 #include "tabletView.h"
 #include <QString>
+#include <QPainter>
 
-TabletView::TabletView(Tablet* model, QGraphicsItem* parent)
-    : QGraphicsRectItem(parent), View(model) {
-
-    setRect(-8, -5, 16, 10);
-    setBrush(QBrush(Qt::green));
-
+TabletView::TabletView(Tablet* model,Territory * territory, QGraphicsItem* parent)
+    : View(model, territory) {
+    timerMS = 5000;
+    color = Qt::darkGreen;
     label = new QGraphicsTextItem(this);
     label->setDefaultTextColor(Qt::darkGreen);
     label->setPlainText(QString::fromStdString(model->getNombreDueno()) + " tablet");
@@ -14,4 +13,13 @@ TabletView::TabletView(Tablet* model, QGraphicsItem* parent)
     label->setScale(0.7);
 
     updatePosition();
+}
+QRectF TabletView::boundingRect() const{
+    return QRectF(-24, -24, 24, 24);;
+}
+
+void TabletView::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
+    Q_UNUSED(option); Q_UNUSED(widget);
+    painter->setBrush(color);
+    painter->drawRoundedRect(boundingRect(), 3, 3);
 }

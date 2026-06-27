@@ -8,14 +8,16 @@
 #include "tablet.h"
 #include "view.h"
 
-class TabletView : public View, public QGraphicsRectItem  {
+class TabletView : public View  {
     Q_OBJECT
 private:
     Tablet* tabletModel;
     QGraphicsTextItem* label;
+    QRectF boundingRect() const override;
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
 
 public:
-    TabletView(Tablet* model, QGraphicsItem* parent = nullptr);
+    TabletView(Tablet* model, Territory * territory, QGraphicsItem* parent = nullptr);
 };
 
 #endif // TABLETVIEW_H

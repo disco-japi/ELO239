@@ -46,9 +46,9 @@ template <> constexpr inline auto View::qt_create_metaobjectdata<qt_meta_tag_ZN4
 
     QtMocHelpers::UintData qt_methods {
         // Slot 'onTimeOut'
-        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(1, 2, QMC::AccessProtected, QMetaType::Void),
         // Slot 'onClick'
-        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(3, 2, QMC::AccessProtected, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -91,6 +91,8 @@ void *View::qt_metacast(const char *_clname)
     if (!strcmp(_clname, qt_staticMetaObjectStaticContent<qt_meta_tag_ZN4ViewE_t>.strings))
         return static_cast<void*>(this);
     if (!strcmp(_clname, "QGraphicsItem"))
+        return static_cast< QGraphicsItem*>(this);
+    if (!strcmp(_clname, "org.qt-project.Qt.QGraphicsItem"))
         return static_cast< QGraphicsItem*>(this);
     return QObject::qt_metacast(_clname);
 }

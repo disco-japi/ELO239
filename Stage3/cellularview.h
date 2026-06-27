@@ -8,15 +8,17 @@
 #include "cellular.h"
 #include "view.h"
 
-class CellularView : public View , public QGraphicsRectItem {
+class CellularView : public View {
     Q_OBJECT
 private slots:
-    //void onClick();
+    void onTimeOut() override;
 private:
     QGraphicsTextItem* label;
+    QRectF boundingRect() const override;
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
 
 public:
-    CellularView(Cellular* model, QGraphicsItem* parent = nullptr);
+    CellularView(Cellular* model, Territory * territory,QGraphicsItem* parent = nullptr);
 };
 
 #endif // CELLULARVIEW_H

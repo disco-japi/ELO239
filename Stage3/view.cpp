@@ -4,8 +4,8 @@
 #include <iostream>
 #include <QGraphicsSceneEvent>
 
-View::View(Equipo * newModel, QObject *parent)
-    : QObject{parent}
+View::View(Equipo * newModel, Territory * territory, QGraphicsItem *parent)
+    : QObject(), QGraphicsItem(parent)
 {
     model = newModel;
     temp = new QTimer(this);
@@ -18,10 +18,7 @@ void View::updatePosition() {
 }
 
 void View::summonRadar(){
-    radarCircle * radar = new radarCircle(this);
-    radar->setScale(1);
-    //radar->setBrush(Qt::red);
-    radar->setOpacity(0.4);
+    radarCircle * radar = new radarCircle(color, this);
     qreal startSize = 5.0;
     qreal endSize = 50.0;
     QPropertyAnimation *anim = new QPropertyAnimation(radar, "rect", this);
@@ -48,4 +45,14 @@ void View::mousePressEvent(QGraphicsSceneMouseEvent *event) {
         }
     }
     QGraphicsItem::mousePressEvent(event);
+}
+void View::onClick(){
+
+}
+void View::onTimeOut(){
+    summonRadar();
+    Cellular * cell = territorio->findNearByCellular(model);
+    if (cell != NULL){
+        cell->reportarUbicacionEquipo(model);
+    }
 }

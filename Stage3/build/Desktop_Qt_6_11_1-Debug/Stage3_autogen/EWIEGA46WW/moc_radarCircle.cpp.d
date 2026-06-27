@@ -128,6 +128,7 @@
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qversiontagging.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qxptype_traits.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtCore/qyieldcpu.h \
+  /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/QColor \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qcolor.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qimage.h \
   /home/discojapi/Qt/6.11.1/gcc_64/include/QtGui/qpaintdevice.h \

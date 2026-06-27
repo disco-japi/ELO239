@@ -6,10 +6,11 @@
 #define M_PI 3.14159265358979323846
 #endif
 
-Equipo::Equipo(std::string nombre, double x, double y, int vel, int ang, int dAng)
+Equipo::Equipo(std::string nombre, std::string nombreEq, double x, double y, int vel, int ang, int dAng)
     : nombreDueno(nombre), posX(x), posY(y), rapidez(vel), angulo(ang), deltaAngulo(dAng) {}
 
 std::string Equipo::getNombreDueno() const { return nombreDueno; }
+std::string Equipo::getNombreEquipo() const { return nombreEquipo; }
 double Equipo::getX() const { return posX; }
 double Equipo::getY() const { return posY; }
 int Equipo::getRapidez() const { return rapidez; }

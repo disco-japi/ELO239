@@ -45,6 +45,7 @@ Widget::~Widget()
 {
     delete territoryModel;
     delete nube;
+    delete timer;
     for (auto c : territoryModel->celularesModels) delete c;
     for (auto t : territoryModel->tagsModels)      delete t;
     for (auto tb: territoryModel->tabletsModels)   delete tb;
@@ -55,6 +56,12 @@ void Widget::onPlay()
     timer->start((int)(deltaTiempo * 1000));
     for(EloTelTagView* tag : tagsViews){
         tag->startTimer();
+    }
+    for(TabletView* tab : tabletsViews){
+        tab->startTimer();
+    }
+    for(CellularView* cell : celularesViews){
+        cell->startTimer();
     }
 }
 
@@ -120,7 +127,7 @@ void Widget::cargarConfiguracion(const QString& filePath)
         Cellular* cel = new Cellular(nombrePersona.toStdString(), cx, cy, cvel, cang, cdang, nube);
         territoryModel->celularesModels.push_back(cel);
 
-        CellularView* cView = new CellularView(cel);
+        CellularView* cView = new CellularView(cel, territoryModel);
         nube->updateLocation(nombrePersona.toStdString(), "Celular", cx, cy);
         cView->setZValue(10);
         celularesViews.push_back(cView);
@@ -139,7 +146,7 @@ void Widget::cargarConfiguracion(const QString& filePath)
             tView->setZValue(8);
             tagsViews.push_back(tView);
             territoryView->getScene()->addItem(tView);
-            nube->updateLocation(tag->getNombreDueno(),tag->getNombreTag(), tag->getX(), tag->getY());
+            nube->updateLocation(tag->getNombreDueno(),tag->getNombreEquipo(), tag->getX(), tag->getY());
         }
 
         if (hasTablet == 1) {
@@ -149,7 +156,7 @@ void Widget::cargarConfiguracion(const QString& filePath)
             Tablet* tab = new Tablet(nombrePersona.toStdString(), tbx, tby, tbvel, tbang, tbdang, nube);
             territoryModel->tabletsModels.push_back(tab);
 
-            TabletView* tabView = new TabletView(tab);
+            TabletView* tabView = new TabletView(tab, territoryModel);
             tabView->setZValue(9);
             tabletsViews.push_back(tabView);
             territoryView->getScene()->addItem(tabView);

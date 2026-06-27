@@ -10,8 +10,11 @@
 #include "territory.h"
 #include "view.h"
 
-class EloTelTagView : public  View, public QGraphicsEllipseItem{
+class EloTelTagView : public  View{
     Q_OBJECT
+private:
+    QRectF boundingRect() const override;
+    void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
 public:
     EloTelTagView(EloTelTag* model, Territory *territory, QGraphicsItem* parent = nullptr, QObject *parentO = nullptr);
 };

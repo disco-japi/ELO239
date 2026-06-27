@@ -8,6 +8,7 @@ class Equipo : public QObject  {
     Q_OBJECT
 protected:
     std::string nombreDueno;
+    std::string nombreEquipo;
     double posX;
     double posY;
     int rapidez;
@@ -16,9 +17,9 @@ protected:
     int rango = 50;
 
 public:
-    Equipo(std::string nombre, double x, double y, int vel, int ang, int dAng);
+    Equipo(std::string nombre,std::string nombreEq, double x, double y, int vel, int ang, int dAng);
     virtual ~Equipo() = default;
-
+    std::string getNombreEquipo() const;
     std::string getNombreDueno() const;
     double getX() const;
     double getY() const;

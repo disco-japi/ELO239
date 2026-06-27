@@ -3,8 +3,6 @@
 
 #include "equipo.h"
 #include "etnube.h"
-#include "elotelTag.h"
-#include "tablet.h"
 
 class Cellular : public Equipo {
     Q_OBJECT
@@ -15,8 +13,7 @@ private:
 public:
     Cellular(std::string nombre, double x, double y, int vel, int ang, int dAng, ETNube *nube);
     ~Cellular() override = default;
-    void reportarUbicacionTag(EloTelTag * tag);
-    void reportarUbicacionTablet(Tablet * tab);
+    void reportarUbicacionEquipo(Equipo * equipo);
 };
 
 #endif // CELLULAR_H
