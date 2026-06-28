@@ -2,8 +2,8 @@
 #include <QString>
 #include <QPainter>
 
-CellularView::CellularView(Cellular* model, Territory * territory, QGraphicsItem* parent)
-    : View(model, territory){
+CellularView::CellularView(Cellular* model, Territory * territory, QWidget *mainWindow,QGraphicsItem* parent)
+    : View(model, territory, mainWindow){
     timerMS = 4000;
     color = Qt::blue;
     label = new QGraphicsTextItem(this);

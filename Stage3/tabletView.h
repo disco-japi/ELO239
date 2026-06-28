@@ -17,7 +17,7 @@ private:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
 
 public:
-    TabletView(Tablet* model, Territory * territory, QGraphicsItem* parent = nullptr);
+    TabletView(Tablet* model, Territory * territory,QWidget *mainWindow, QGraphicsItem* parent = nullptr);
 };
 
 #endif // TABLETVIEW_H

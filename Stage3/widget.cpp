@@ -127,7 +127,7 @@ void Widget::cargarConfiguracion(const QString& filePath)
         Cellular* cel = new Cellular(nombrePersona.toStdString(), cx, cy, cvel, cang, cdang, nube);
         territoryModel->celularesModels.push_back(cel);
 
-        CellularView* cView = new CellularView(cel, territoryModel);
+        CellularView* cView = new CellularView(cel, territoryModel,this);
         nube->updateLocation(nombrePersona.toStdString(), "Celular", cx, cy);
         cView->setZValue(10);
         celularesViews.push_back(cView);
@@ -142,7 +142,7 @@ void Widget::cargarConfiguracion(const QString& filePath)
                                            tagName.toStdString(), tx, ty, tvel, tang, tdang);
             territoryModel->tagsModels.push_back(tag);
 
-            EloTelTagView* tView = new EloTelTagView(tag, territoryModel);
+            EloTelTagView* tView = new EloTelTagView(tag, territoryModel,this);
             tView->setZValue(8);
             tagsViews.push_back(tView);
             territoryView->getScene()->addItem(tView);
@@ -156,7 +156,7 @@ void Widget::cargarConfiguracion(const QString& filePath)
             Tablet* tab = new Tablet(nombrePersona.toStdString(), tbx, tby, tbvel, tbang, tbdang, nube);
             territoryModel->tabletsModels.push_back(tab);
 
-            TabletView* tabView = new TabletView(tab, territoryModel);
+            TabletView* tabView = new TabletView(tab, territoryModel,this);
             tabView->setZValue(9);
             tabletsViews.push_back(tabView);
             territoryView->getScene()->addItem(tabView);

@@ -18,7 +18,7 @@ private:
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
 
 public:
-    CellularView(Cellular* model, Territory * territory,QGraphicsItem* parent = nullptr);
+    CellularView(Cellular* model, Territory * territory, QWidget *mainWindow, QGraphicsItem* parent = nullptr);
 };
 
 #endif // CELLULARVIEW_H

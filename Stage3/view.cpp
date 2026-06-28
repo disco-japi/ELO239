@@ -1,58 +1,108 @@
 #include "view.h"
 #include "radarCircle.h"
 #include "QPropertyAnimation"
+#include <QCursor>
 #include <iostream>
 #include <QGraphicsSceneEvent>
+#include <QEvent>
+#include <QDebug>
 
-View::View(Equipo * newModel, Territory * territory, QGraphicsItem *parent)
+View::View(Equipo *newModel, Territory *territory, QWidget *mainWindow, QGraphicsItem *parent)
     : QObject(), QGraphicsItem(parent)
 {
+    infowindow = nullptr;
+    this->mainWindow = mainWindow;
     model = newModel;
+    this->territorio = territory;
     temp = new QTimer(this);
-    connect(temp, &QTimer::timeout, this,&View::onTimeOut);
+    context = new QMenu(mainWindow);
+    openInfo = new QAction("FindMy", this);
+    context->addAction(openInfo);
+    connect(openInfo, &QAction::triggered, this, &View::onMenuOpen);
+    connect(temp, &QTimer::timeout, this, &View::onTimeOut);
+    connect(this, &View::clicked, this, &View::onClick);
+    setAcceptedMouseButtons(Qt::LeftButton);
+    setFiltersChildEvents(true);
 }
-void View::updatePosition() {
-    if (model) {
+void View::onMenuOpen()
+{
+    if (infowindow == NULL)
+    {
+        std::cout << "Open";
+        infowindow = new InfoWindow(model, mainWindow);
+    }
+    infowindow->show();
+    infowindow->raise();
+    infowindow->activateWindow();
+}
+
+void View::updatePosition()
+{
+    if (model)
+    {
         setPos(model->getX(), model->getY());
     }
 }
 
-void View::summonRadar(){
-    radarCircle * radar = new radarCircle(color, this);
+void View::summonRadar()
+{
+    radarCircle *radar = new radarCircle(color, this);
     qreal startSize = 5.0;
     qreal endSize = 50.0;
     QPropertyAnimation *anim = new QPropertyAnimation(radar, "rect", this);
-    anim->setStartValue(QRectF(- startSize/2,- startSize/2, startSize, startSize));
-    anim->setEndValue(QRectF(- endSize/2,  endSize/2, endSize, endSize));
+    anim->setStartValue(QRectF(-startSize / 2, -startSize / 2, startSize, startSize));
+    anim->setEndValue(QRectF(-endSize / 2, -endSize / 2, endSize, endSize));
     anim->setDuration(1000);
     anim->start(QAbstractAnimation::DeleteWhenStopped);
     radar->show();
-    QObject::connect(anim, &QPropertyAnimation::finished, [=]() {
-        delete radar;
-    });
+    QObject::connect(anim, &QPropertyAnimation::finished, [=]()
+                     { delete radar; });
 }
-void View::startTimer(){
+void View::startTimer()
+{
     temp->start(timerMS);
 }
-void View::stopTimer(){
+void View::stopTimer()
+{
     temp->stop();
 }
-void View::mousePressEvent(QGraphicsSceneMouseEvent *event) {
-    if (event->button() == Qt::LeftButton) {
+void View::mousePressEvent(QGraphicsSceneMouseEvent *event)
+{
+    if (event->button() == Qt::LeftButton)
+    {
         event->accept();
-        if (contains(event->pos())){
-            std::cout<< "Menu";
-        }
+        emit clicked();
     }
     QGraphicsItem::mousePressEvent(event);
 }
-void View::onClick(){
 
+bool View::sceneEventFilter(QGraphicsItem *watched, QEvent *event)
+{
+    if (event->type() == QEvent::GraphicsSceneMousePress)
+    {
+        auto mouseEvent = static_cast<QGraphicsSceneMouseEvent *>(event);
+        if (mouseEvent->button() == Qt::LeftButton)
+        {
+            emit clicked();
+            event->accept();
+            return true;
+        }
+    }
+    return QGraphicsItem::sceneEventFilter(watched, event);
 }
-void View::onTimeOut(){
+
+void View::onClick()
+{
+    const QPoint scenePos = QPointF(pos()).toPoint();
+    const QPoint viewPos = mainWindow->mapToGlobal(scenePos);
+    context->exec(viewPos);
+}
+void View::onTimeOut()
+{
     summonRadar();
-    Cellular * cell = territorio->findNearByCellular(model);
-    if (cell != NULL){
+    Cellular *cell = territorio->findNearByCellular(model);
+    if (cell != NULL)
+    {
         cell->reportarUbicacionEquipo(model);
     }
 }

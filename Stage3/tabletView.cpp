@@ -2,8 +2,8 @@
 #include <QString>
 #include <QPainter>
 
-TabletView::TabletView(Tablet* model,Territory * territory, QGraphicsItem* parent)
-    : View(model, territory) {
+TabletView::TabletView(Tablet* model,Territory * territory,QWidget *mainWindow, QGraphicsItem* parent)
+    : View(model, territory, mainWindow) {
     timerMS = 5000;
     color = Qt::darkGreen;
     label = new QGraphicsTextItem(this);

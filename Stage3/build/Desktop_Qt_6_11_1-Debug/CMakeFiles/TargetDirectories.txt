@@ -1,9 +1,0 @@
-/home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/CMakeFiles/Stage3.dir
-/home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/CMakeFiles/edit_cache.dir
-/home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/CMakeFiles/rebuild_cache.dir
-/home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/CMakeFiles/list_install_components.dir
-/home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/CMakeFiles/install.dir
-/home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/CMakeFiles/install/local.dir
-/home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/CMakeFiles/install/strip.dir
-/home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/CMakeFiles/Stage3_autogen_timestamp_deps.dir
-/home/discojapi/Proyectos/ELO239/Stage3/build/Desktop_Qt_6_11_1-Debug/CMakeFiles/Stage3_autogen.dir
