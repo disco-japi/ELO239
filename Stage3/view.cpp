@@ -7,13 +7,14 @@
 #include <QEvent>
 #include <QDebug>
 
-View::View(Equipo *newModel, Territory *territory, QWidget *mainWindow, QGraphicsItem *parent)
+View::View(Equipo *newModel, Territory *territory, QWidget *mainWindow, ETNube *nube, QGraphicsItem *parent)
     : QObject(), QGraphicsItem(parent)
 {
     infowindow = nullptr;
     this->mainWindow = mainWindow;
     model = newModel;
     this->territorio = territory;
+    this->nube = nube;
     temp = new QTimer(this);
     context = new QMenu(mainWindow);
     openInfo = new QAction("FindMy", this);
@@ -26,10 +27,11 @@ View::View(Equipo *newModel, Territory *territory, QWidget *mainWindow, QGraphic
 }
 void View::onMenuOpen()
 {
+    std::cout << "Help\n";
     if (infowindow == NULL)
     {
         std::cout << "Open";
-        infowindow = new InfoWindow(model, mainWindow);
+        infowindow = new InfoWindow(model, nube, mainWindow);
     }
     infowindow->show();
     infowindow->raise();
@@ -93,9 +95,8 @@ bool View::sceneEventFilter(QGraphicsItem *watched, QEvent *event)
 
 void View::onClick()
 {
-    const QPoint scenePos = QPointF(pos()).toPoint();
-    const QPoint viewPos = mainWindow->mapToGlobal(scenePos);
-    context->exec(viewPos);
+    const QPoint globalPos = QCursor::pos();
+    context->popup(globalPos);
 }
 void View::onTimeOut()
 {

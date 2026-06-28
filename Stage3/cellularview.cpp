@@ -2,8 +2,9 @@
 #include <QString>
 #include <QPainter>
 
-CellularView::CellularView(Cellular* model, Territory * territory, QWidget *mainWindow,QGraphicsItem* parent)
-    : View(model, territory, mainWindow){
+CellularView::CellularView(Cellular *model, Territory *territory, QWidget *mainWindow, ETNube *nube, QGraphicsItem *parent)
+    : View(model, territory, mainWindow, nube)
+{
     timerMS = 4000;
     color = Qt::blue;
     label = new QGraphicsTextItem(this);
@@ -15,15 +16,19 @@ CellularView::CellularView(Cellular* model, Territory * territory, QWidget *main
     updatePosition();
 }
 
-QRectF CellularView::boundingRect() const{
-    return QRectF(-6, -6, 12, 24);;
+QRectF CellularView::boundingRect() const
+{
+    return QRectF(-6, -6, 12, 24);
+    ;
 }
 
-void CellularView::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
-    Q_UNUSED(option); Q_UNUSED(widget);
+void CellularView::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+{
+    Q_UNUSED(option);
+    Q_UNUSED(widget);
     painter->setBrush(QBrush(color));
-    painter->drawRoundedRect(boundingRect(),3,3);
+    painter->drawRoundedRect(boundingRect(), 3, 3);
 }
-void CellularView::onTimeOut(){
-
+void CellularView::onTimeOut()
+{
 }

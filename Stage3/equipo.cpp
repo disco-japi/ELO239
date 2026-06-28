@@ -7,7 +7,7 @@
 #endif
 
 Equipo::Equipo(std::string nombre, std::string nombreEq, double x, double y, int vel, int ang, int dAng)
-    : nombreDueno(nombre), posX(x), posY(y), rapidez(vel), angulo(ang), deltaAngulo(dAng) {}
+    : nombreDueno(nombre), nombreEquipo(nombreEq), posX(x), posY(y), rapidez(vel), angulo(ang), deltaAngulo(dAng) {}
 
 std::string Equipo::getNombreDueno() const { return nombreDueno; }
 std::string Equipo::getNombreEquipo() const { return nombreEquipo; }
@@ -17,9 +17,11 @@ int Equipo::getRapidez() const { return rapidez; }
 int Equipo::getAngulo() const { return angulo; }
 int Equipo::getDeltaAngulo() const { return deltaAngulo; }
 
-void Equipo::mover(double dt, int w, int h) {
+void Equipo::mover(double dt, int w, int h)
+{
     // Variación aleatoria del ángulo en [-deltaAngulo, +deltaAngulo]
-    if (deltaAngulo > 0) {
+    if (deltaAngulo > 0)
+    {
         int variacion = (rand() % (2 * deltaAngulo + 1)) - deltaAngulo;
         angulo += variacion;
     }
@@ -32,19 +34,25 @@ void Equipo::mover(double dt, int w, int h) {
     double ny = posY + vy * dt;
 
     // Rebote horizontal
-    if (nx < 0) {
+    if (nx < 0)
+    {
         nx = -nx;
         vx = -vx;
-    } else if (nx > w) {
+    }
+    else if (nx > w)
+    {
         nx = 2 * w - nx;
         vx = -vx;
     }
 
     // Rebote vertical
-    if (ny < 0) {
+    if (ny < 0)
+    {
         ny = -ny;
         vy = -vy;
-    } else if (ny > h) {
+    }
+    else if (ny > h)
+    {
         ny = 2 * h - ny;
         vy = -vy;
     }
@@ -55,10 +63,11 @@ void Equipo::mover(double dt, int w, int h) {
     // Recalcular ángulo desde las componentes de velocidad resultantes
     angulo = (int)(std::atan2(vy, vx) * 180.0 / M_PI);
 }
-bool Equipo::enRango(Equipo * equipo){
+bool Equipo::enRango(Equipo *equipo)
+{
     double dx = this->getX() - equipo->getX();
     double dy = this->getY() - equipo->getY();
-    double distance = (double) std::sqrt(dx * dx + dy * dy);///pitagoras
-    double round = (double) std::round(distance * 100) / 100;/// redondea a 2 decimales
+    double distance = (double)std::sqrt(dx * dx + dy * dy);  /// pitagoras
+    double round = (double)std::round(distance * 100) / 100; /// redondea a 2 decimales
     return round <= rango;
 }

@@ -8,17 +8,19 @@
 #include "cellular.h"
 #include "view.h"
 
-class CellularView : public View {
+class CellularView : public View
+{
     Q_OBJECT
 private slots:
     void onTimeOut() override;
+
 private:
-    QGraphicsTextItem* label;
+    QGraphicsTextItem *label;
     QRectF boundingRect() const override;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
 
 public:
-    CellularView(Cellular* model, Territory * territory, QWidget *mainWindow, QGraphicsItem* parent = nullptr);
+    CellularView(Cellular *model, Territory *territory, QWidget *mainWindow, ETNube *nube, QGraphicsItem *parent = nullptr);
 };
 
 #endif // CELLULARVIEW_H

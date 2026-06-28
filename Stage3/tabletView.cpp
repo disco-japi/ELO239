@@ -2,8 +2,9 @@
 #include <QString>
 #include <QPainter>
 
-TabletView::TabletView(Tablet* model,Territory * territory,QWidget *mainWindow, QGraphicsItem* parent)
-    : View(model, territory, mainWindow) {
+TabletView::TabletView(Tablet *model, Territory *territory, QWidget *mainWindow, ETNube *nube, QGraphicsItem *parent)
+    : View(model, territory, mainWindow, nube)
+{
     timerMS = 5000;
     color = Qt::darkGreen;
     label = new QGraphicsTextItem(this);
@@ -14,12 +15,16 @@ TabletView::TabletView(Tablet* model,Territory * territory,QWidget *mainWindow, 
 
     updatePosition();
 }
-QRectF TabletView::boundingRect() const{
-    return QRectF(-24, -24, 24, 24);;
+QRectF TabletView::boundingRect() const
+{
+    return QRectF(-24, -24, 24, 24);
+    ;
 }
 
-void TabletView::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
-    Q_UNUSED(option); Q_UNUSED(widget);
+void TabletView::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+{
+    Q_UNUSED(option);
+    Q_UNUSED(widget);
     painter->setBrush(color);
     painter->drawRoundedRect(boundingRect(), 3, 3);
 }

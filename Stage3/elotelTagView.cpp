@@ -6,8 +6,9 @@
 #include <QPropertyAnimation>
 #include <QPainter>
 
-EloTelTagView::EloTelTagView(EloTelTag* model, Territory *territory, QWidget *mainWindow,QGraphicsItem* parent, QObject *parentO)
-    : View(model, territory, mainWindow) {
+EloTelTagView::EloTelTagView(EloTelTag *model, Territory *territory, QWidget *mainWindow, ETNube *nube, QGraphicsItem *parent, QObject *parentO)
+    : View(model, territory, mainWindow, nube)
+{
     timerMS = 4000;
     color = Qt::red;
     label = new QGraphicsTextItem(this);
@@ -19,14 +20,17 @@ EloTelTagView::EloTelTagView(EloTelTag* model, Territory *territory, QWidget *ma
     updatePosition();
 }
 
-
-QRectF EloTelTagView::boundingRect() const{
-    return QRectF(-6, -6, 12, 12);;
+QRectF EloTelTagView::boundingRect() const
+{
+    return QRectF(-6, -6, 12, 12);
+    ;
 }
 
-void EloTelTagView::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
-    Q_UNUSED(option); Q_UNUSED(widget);
+void EloTelTagView::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+{
+    Q_UNUSED(option);
+    Q_UNUSED(widget);
     painter->setBrush(QBrush(color));
     painter->drawEllipse(boundingRect());
 }
-void EloTelTagView::onClick(){}
+void EloTelTagView::onClick() {}
