@@ -22,10 +22,12 @@ protected slots:
     virtual void onTimeOut();
     virtual void onClick();
     virtual void onMenuOpen();
+    virtual void onGMenuOpen();
 
 private:
     QTimer *temp;
     QAction *openInfo;
+    QAction *openGInfo;
     QMenu *context;
     InfoWindow *infowindow;
 
@@ -48,10 +50,8 @@ public:
     void updatePosition();
     void startTimer();
     void stopTimer();
-
-    // NUEVO: Métodos públicos
     void updateTraza();
-    Equipo* getModel() const { return model; } // NUEVO: Getter
+    Equipo* getModel() const { return model; }
 
 signals:
     void clicked();

@@ -1,6 +1,7 @@
 #include "equipo.h"
 #include <cmath>
 #include <cstdlib>
+#include <QPointF>
 
 #ifndef M_PI
 #define M_PI 3.14159265358979323846
@@ -78,17 +79,18 @@ void Equipo::mover(double dt, int w, int h)
 
     // Recalcular ángulo desde las componentes de velocidad resultantes
     angulo = (int)(std::atan2(vy, vx) * 180.0 / M_PI);
+
+    // Agregar punto a la traza si está visible
     if (trazaVisible) {
         addTrazaPoint(posX, posY);
     }
 }
 
-
 bool Equipo::enRango(Equipo *equipo)
 {
     double dx = this->getX() - equipo->getX();
     double dy = this->getY() - equipo->getY();
-    double distance = (double)std::sqrt(dx * dx + dy * dy);  /// pitagoras
-    double round = (double)std::round(distance * 100) / 100; /// redondea a 2 decimales
+    double distance = (double)std::sqrt(dx * dx + dy * dy);
+    double round = (double)std::round(distance * 100) / 100;
     return round <= rango;
 }

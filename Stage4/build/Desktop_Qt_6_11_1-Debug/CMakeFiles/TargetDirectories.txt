@@ -1,0 +1,9 @@
+/home/discojapi/Descargas/Stage3/build/Desktop_Qt_6_11_1-Debug/CMakeFiles/Stage4.dir
+/home/discojapi/Descargas/Stage3/build/Desktop_Qt_6_11_1-Debug/CMakeFiles/edit_cache.dir
+/home/discojapi/Descargas/Stage3/build/Desktop_Qt_6_11_1-Debug/CMakeFiles/rebuild_cache.dir
+/home/discojapi/Descargas/Stage3/build/Desktop_Qt_6_11_1-Debug/CMakeFiles/list_install_components.dir
+/home/discojapi/Descargas/Stage3/build/Desktop_Qt_6_11_1-Debug/CMakeFiles/install.dir
+/home/discojapi/Descargas/Stage3/build/Desktop_Qt_6_11_1-Debug/CMakeFiles/install/local.dir
+/home/discojapi/Descargas/Stage3/build/Desktop_Qt_6_11_1-Debug/CMakeFiles/install/strip.dir
+/home/discojapi/Descargas/Stage3/build/Desktop_Qt_6_11_1-Debug/CMakeFiles/Stage4_autogen_timestamp_deps.dir
+/home/discojapi/Descargas/Stage3/build/Desktop_Qt_6_11_1-Debug/CMakeFiles/Stage4_autogen.dir

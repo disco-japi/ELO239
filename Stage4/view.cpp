@@ -1,11 +1,13 @@
 #include "view.h"
 #include "radarCircle.h"
-#include "QPropertyAnimation"
+#include "ginfowindow.h"  // NUEVO: Include para GFindMy
+#include <QPropertyAnimation>
 #include <QCursor>
 #include <iostream>
 #include <QGraphicsSceneEvent>
 #include <QEvent>
 #include <QDebug>
+#include <QPen>
 
 View::View(Equipo *newModel, Territory *territory, QWidget *mainWindow, ETNube *nube, QGraphicsItem *parent)
     : QObject(), QGraphicsItem(parent)
@@ -17,14 +19,24 @@ View::View(Equipo *newModel, Territory *territory, QWidget *mainWindow, ETNube *
     this->nube = nube;
     temp = new QTimer(this);
     context = new QMenu(mainWindow);
+
+    // Acción FindMy (existente)
     openInfo = new QAction("FindMy", this);
     context->addAction(openInfo);
     connect(openInfo, &QAction::triggered, this, &View::onMenuOpen);
+
+    // NUEVO: Acción GFindMy
+    openGInfo = new QAction("GFindMy", this);
+    context->addAction(openGInfo);
+    connect(openGInfo, &QAction::triggered, this, &View::onGMenuOpen);
+
     connect(temp, &QTimer::timeout, this, &View::onTimeOut);
     connect(this, &View::clicked, this, &View::onClick);
     setAcceptedMouseButtons(Qt::LeftButton);
     setFiltersChildEvents(true);
+    trazaItem = nullptr;
 }
+
 void View::onMenuOpen()
 {
     std::cout << "Help\n";
@@ -38,11 +50,24 @@ void View::onMenuOpen()
     infowindow->activateWindow();
 }
 
+// NUEVO: Implementación de GFindMy
+void View::onGMenuOpen()
+{
+    GInfoWindow *gInfo = new GInfoWindow(
+        QString::fromStdString(model->getNombreDueno()),
+        territorio,
+        nube,
+        mainWindow
+        );
+    gInfo->show();
+}
+
 void View::updatePosition()
 {
     if (model)
     {
         setPos(model->getX(), model->getY());
+        updateTraza();
     }
 }
 
@@ -60,14 +85,54 @@ void View::summonRadar()
     QObject::connect(anim, &QPropertyAnimation::finished, [=]()
                      { delete radar; });
 }
+
+void View::updateTraza()
+{
+    if (!model) return;
+
+    if (!model->isTrazaVisible()) {
+        if (trazaItem) {
+            trazaItem->setVisible(false);
+        }
+        return;
+    }
+
+    QVector<QPointF> points = model->getTrazaPoints();
+    if (points.size() < 2) {
+        if (trazaItem) {
+            trazaItem->setVisible(false);
+        }
+        return;
+    }
+
+    if (!trazaItem) {
+        trazaItem = new QGraphicsPathItem(this);
+        QPen pen(Qt::blue);
+        pen.setWidth(2);
+        trazaItem->setPen(pen);
+        trazaItem->setZValue(-1);
+    }
+
+    QPainterPath path;
+    path.moveTo(points.first());
+    for (int i = 1; i < points.size(); ++i) {
+        path.lineTo(points[i]);
+    }
+
+    trazaItem->setPath(path);
+    trazaItem->setVisible(true);
+}
+
 void View::startTimer()
 {
     temp->start(timerMS);
 }
+
 void View::stopTimer()
 {
     temp->stop();
 }
+
 void View::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton)
@@ -98,6 +163,7 @@ void View::onClick()
     const QPoint globalPos = QCursor::pos();
     context->popup(globalPos);
 }
+
 void View::onTimeOut()
 {
     summonRadar();

@@ -16,6 +16,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Stage4.dir/equipo.cpp.o.d"
   "CMakeFiles/Stage4.dir/etnube.cpp.o"
   "CMakeFiles/Stage4.dir/etnube.cpp.o.d"
+  "CMakeFiles/Stage4.dir/ginfowindow.cpp.o"
+  "CMakeFiles/Stage4.dir/ginfowindow.cpp.o.d"
   "CMakeFiles/Stage4.dir/infowindow.cpp.o"
   "CMakeFiles/Stage4.dir/infowindow.cpp.o.d"
   "CMakeFiles/Stage4.dir/main.cpp.o"

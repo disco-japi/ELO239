@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/parg/Downloads/ELO239/Stage3/elotelTagView.cpp" "CMakeFiles/Stage4.dir/elotelTagView.cpp.o" "gcc" "CMakeFiles/Stage4.dir/elotelTagView.cpp.o.d"
   "/home/parg/Downloads/ELO239/Stage3/equipo.cpp" "CMakeFiles/Stage4.dir/equipo.cpp.o" "gcc" "CMakeFiles/Stage4.dir/equipo.cpp.o.d"
   "/home/parg/Downloads/ELO239/Stage3/etnube.cpp" "CMakeFiles/Stage4.dir/etnube.cpp.o" "gcc" "CMakeFiles/Stage4.dir/etnube.cpp.o.d"
+  "/home/parg/Downloads/ELO239/Stage3/ginfowindow.cpp" "CMakeFiles/Stage4.dir/ginfowindow.cpp.o" "gcc" "CMakeFiles/Stage4.dir/ginfowindow.cpp.o.d"
   "/home/parg/Downloads/ELO239/Stage3/infowindow.cpp" "CMakeFiles/Stage4.dir/infowindow.cpp.o" "gcc" "CMakeFiles/Stage4.dir/infowindow.cpp.o.d"
   "/home/parg/Downloads/ELO239/Stage3/main.cpp" "CMakeFiles/Stage4.dir/main.cpp.o" "gcc" "CMakeFiles/Stage4.dir/main.cpp.o.d"
   "/home/parg/Downloads/ELO239/Stage3/radarCircle.cpp" "CMakeFiles/Stage4.dir/radarCircle.cpp.o" "gcc" "CMakeFiles/Stage4.dir/radarCircle.cpp.o.d"

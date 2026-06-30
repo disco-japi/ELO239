@@ -564,6 +564,12 @@
 			null
 		],
 		[
+			"/home/parg/Downloads/ELO239/Stage3/ginfowindow.h",
+			"MU",
+			"EWIEGA46WW/moc_ginfowindow.cpp",
+			null
+		],
+		[
 			"/home/parg/Downloads/ELO239/Stage3/infowindow.h",
 			"MU",
 			"EWIEGA46WW/moc_infowindow.cpp",
@@ -676,6 +682,7 @@
 		[ "/home/parg/Downloads/ELO239/Stage3/elotelTagView.cpp", "MU", null ],
 		[ "/home/parg/Downloads/ELO239/Stage3/equipo.cpp", "MU", null ],
 		[ "/home/parg/Downloads/ELO239/Stage3/etnube.cpp", "MU", null ],
+		[ "/home/parg/Downloads/ELO239/Stage3/ginfowindow.cpp", "MU", null ],
 		[ "/home/parg/Downloads/ELO239/Stage3/infowindow.cpp", "MU", null ],
 		[ "/home/parg/Downloads/ELO239/Stage3/main.cpp", "MU", null ],
 		[ "/home/parg/Downloads/ELO239/Stage3/radarCircle.cpp", "MU", null ],

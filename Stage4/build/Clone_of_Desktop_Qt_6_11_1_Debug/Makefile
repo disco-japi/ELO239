@@ -368,6 +368,30 @@ etnube.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage4.dir/build.make CMakeFiles/Stage4.dir/etnube.cpp.s
 .PHONY : etnube.cpp.s
 
+ginfowindow.o: ginfowindow.cpp.o
+.PHONY : ginfowindow.o
+
+# target to build an object file
+ginfowindow.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage4.dir/build.make CMakeFiles/Stage4.dir/ginfowindow.cpp.o
+.PHONY : ginfowindow.cpp.o
+
+ginfowindow.i: ginfowindow.cpp.i
+.PHONY : ginfowindow.i
+
+# target to preprocess a source file
+ginfowindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage4.dir/build.make CMakeFiles/Stage4.dir/ginfowindow.cpp.i
+.PHONY : ginfowindow.cpp.i
+
+ginfowindow.s: ginfowindow.cpp.s
+.PHONY : ginfowindow.s
+
+# target to generate assembly for a file
+ginfowindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Stage4.dir/build.make CMakeFiles/Stage4.dir/ginfowindow.cpp.s
+.PHONY : ginfowindow.cpp.s
+
 infowindow.o: infowindow.cpp.o
 .PHONY : infowindow.o
 
@@ -620,6 +644,9 @@ help:
 	@echo "... etnube.o"
 	@echo "... etnube.i"
 	@echo "... etnube.s"
+	@echo "... ginfowindow.o"
+	@echo "... ginfowindow.i"
+	@echo "... ginfowindow.s"
 	@echo "... infowindow.o"
 	@echo "... infowindow.i"
 	@echo "... infowindow.s"
