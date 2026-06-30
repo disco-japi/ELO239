@@ -1,9 +1,0 @@
-/home/parg/Downloads/ELO239/Stage3/build/Clone_of_Desktop_Qt_6_11_1_Debug/CMakeFiles/Stage4.dir
-/home/parg/Downloads/ELO239/Stage3/build/Clone_of_Desktop_Qt_6_11_1_Debug/CMakeFiles/edit_cache.dir
-/home/parg/Downloads/ELO239/Stage3/build/Clone_of_Desktop_Qt_6_11_1_Debug/CMakeFiles/rebuild_cache.dir
-/home/parg/Downloads/ELO239/Stage3/build/Clone_of_Desktop_Qt_6_11_1_Debug/CMakeFiles/list_install_components.dir
-/home/parg/Downloads/ELO239/Stage3/build/Clone_of_Desktop_Qt_6_11_1_Debug/CMakeFiles/install.dir
-/home/parg/Downloads/ELO239/Stage3/build/Clone_of_Desktop_Qt_6_11_1_Debug/CMakeFiles/install/local.dir
-/home/parg/Downloads/ELO239/Stage3/build/Clone_of_Desktop_Qt_6_11_1_Debug/CMakeFiles/install/strip.dir
-/home/parg/Downloads/ELO239/Stage3/build/Clone_of_Desktop_Qt_6_11_1_Debug/CMakeFiles/Stage4_autogen_timestamp_deps.dir
-/home/parg/Downloads/ELO239/Stage3/build/Clone_of_Desktop_Qt_6_11_1_Debug/CMakeFiles/Stage4_autogen.dir

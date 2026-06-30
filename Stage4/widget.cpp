@@ -166,7 +166,7 @@ void Widget::cargarConfiguracion(const QString &filePath)
 
         Cellular *cel = new Cellular(nombrePersona.toStdString(), cx, cy, cvel, cang, cdang, nube);
         territoryModel->celularesModels.push_back(cel);
-        equiposMap["Celular"] = cel; // NUEVO: Registrar en mapa
+        equiposMap["Celular"] = cel;
 
         CellularView *cView = new CellularView(cel, territoryModel, this, nube);
         nube->updateLocation(nombrePersona.toStdString(), "Celular", cx, cy);
@@ -184,8 +184,7 @@ void Widget::cargarConfiguracion(const QString &filePath)
             EloTelTag *tag = new EloTelTag(nombrePersona.toStdString(),
                                            tagName.toStdString(), tx, ty, tvel, tang, tdang);
             territoryModel->tagsModels.push_back(tag);
-            equiposMap[tagName] = tag; // NUEVO: Registrar en mapa
-
+            equiposMap[tagName] = tag;
             EloTelTagView *tView = new EloTelTagView(tag, territoryModel, this, nube);
             tView->setZValue(8);
             tagsViews.push_back(tView);

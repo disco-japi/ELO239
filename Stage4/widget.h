@@ -30,7 +30,6 @@ private slots:
     void onTimerTick();
 
 public:
-    // NUEVO: Método para alternar la traza de un equipo
     void toggleTraza(const QString &nombreEquipo);
 
 private:
