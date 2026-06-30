@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html","k":"18"},{"m":"cl.utfsm.elo.eloteltag","l":"cl.utfsm.elo.eloteltag"}];updateSearchResults();
