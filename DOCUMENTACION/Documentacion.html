@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación Tarea 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 40px auto;
+            max-width: 900px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: black;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+        h2 {
+            text-align: center;
+            color: black;
+            font-size: 2em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid black;
+            padding-bottom: 10px;
+        }
+        p {
+            text-align: justify;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+            color: black;
+        }
+        .center-img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Tarea 3: Simulador Gráfico en C++ y Qt de EloTelTags y Aplicación Find My</h1>
+
+    <h2>1. Diagrama UML</h2>
+    <img src="Imagen/DIAGRAMACLASES_TAREA3.drawio.png" alt="Diagrama UML de la última etapa" class="center-img">
+    <p><em>Figura 1: Diagrama de clases correspondiente a la última etapa del simulador.</em></p>
+
+    <h2>2. Explicación de la Solución (Interacción de Clases)</h2>
+    <p>
+        Al ejecutar el programa, la clase <strong>Widget</strong> actúa como el orquestador principal. Esta instancia lee la configuración y crea las entidades de la simulación: el modelo <strong>Territory</strong>, la base de datos centralizada <strong>ETNube</strong>, y los dispositivos <strong>Cellular</strong>, <strong>Tablet</strong> y <strong>EloTelTag</strong>. Por cada modelo lógico creado, el Widget instancia su version derivada de <strong>View</strong>, insertándolas en la escena gráfica gestionada por <strong>TerritoryView</strong>.
+    </p>
+    <p>
+        Una vez que el usuario presiona "Play", la interacción ocurre impulsada por eventos de tiempo (QTimer). La ejecucion ocurre de la siguiente forma:
+    </p>
+    <ul>
+        <li><strong>Movimiento y Actualización Visual:</strong> En cada pulso del timer principal, las clases de vista, como EloTelTagView, capturan la señal y ejecutan el método mover() de su modelo lógico heredado de la clase base <strong>Equipo</strong>. Una vez que el modelo actualiza sus coordenadas internas (posX, posY), la vista lee esta nueva posición y se redibuja a sí misma en el QGraphicsScene (mediante updatePosition() y el método virtual paint()).</li>
+        <li><strong>Detección y Reporte (El ecosistema Find My):</strong> La interacción clave ocurre en el reporte de ubicaciones. Un EloTelTag por sí solo no tiene acceso a la ETNube. Durante la simulación, el sistema consulta al objeto <strong>Territory</strong> utilizando su método findNearByCellular(Equipo*). Este método evalúa si existe algún Cellular cuya distancia cumpla la condición lógica enRango() respecto al tag.</li>
+        <li><strong>Sincronización con la Nube:</strong> Si el tag entra en el rango de un celular, el <strong>Cellular</strong> actúa como puente de comunicación. Se invoca reportarUbicacionEquipo() en el celular, el cual toma las coordenadas del tag y ejecuta updateLocation() directamente sobre el puntero compartido de la <strong>ETNube</strong>. De esta forma, la nube actualiza su vector interno cloudData.</li>
+        <li><strong>Consulta de Información del Usuario:</strong> Cuando el usuario interactúa con la interfaz gráfica (haciendo clic en un dispositivo), se despliegan ventanas de diálogo como <strong>InfoWindow</strong> o <strong>GInfoWindow</strong>. Estas clases no buscan a los equipos físicos en el mapa, sino que interactúan exclusivamente con la <strong>ETNube</strong>, utilizando métodos como getEquiposByOwner() para recuperar y mostrar la última ubicación reportada de los dispositivos, completando así el flujo del patrón Modelo-Vista-Controlador.</li>
+    </ul>
+
+    <h2>3. Dificultades y Soluciones</h2>
+    <p>Durante el desarrollo de esta tarea, se presentaron los siguientes desafíos técnicos relacionados con el entorno de Qt y C++:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Dificultad Presentada</th>
+                <th>Solución Implementada</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1. Sincronización de coordenadas entre el Modelo y QGraphicsItem:</strong> Inicialmente, los objetos gráficos no se renderizaban en las posiciones correctas debido a la diferencia entre el sistema de coordenadas lógicas de la clase Equipo y el sistema de coordenadas locales de la escena gráfica en Qt.</td>
+                <td>Se implementó el método updatePosition() en la clase base View, el cual se llama en cada TimeOut del QTimer. Este método fuerza la sincronización usando setPos(model->getX(), model->getY()), asegurando que la representación gráfica siempre refleje los datos matemáticos del modelo.</td>
+            </tr>
+            <tr>
+                <td><strong>2. Filtrado eficiente de dispositivos en rango (Territory):</strong> Identificar si un EloTelTag estaba cerca de un Cellular requería iterar constantemente sobre todos los equipos, lo cual inicialmente causaba sobrecarga al ejecutar el programa.</td>
+                <td>Se encapsuló la lógica de búsqueda espacial en la clase Territory mediante el método findNearByCellular(), utilizando la validación booleana enRango() de la clase Equipo. Esto permitió delegar la responsabilidad matemática fuera de las clases gráficas, manteniendo el código limpio.</td>
+            </tr>
+            <tr>
+                <td><strong>3. Comprensión de la biblioteca de eventos gráficos de Qt:</strong> Al inicio, hubo dificultades para capturar los clics del usuario sobre los dispositivos en el mapa, ya que se intentó utilizar los eventos de ratón estándar de los widgets tradicionales, lo cual no funcionaba dentro del entorno de QGraphicsScene.</td>
+                <td>Se estudió la documentación de la biblioteca gráfica de Qt y se aprendió a manejar la propagación de eventos específicos de la escena. La solución fue sobreescribir el método mousePressEvent(QGraphicsSceneMouseEvent *event) y utilizar sceneEventFilter() en la clase base View, permitiendo detectar clics exactos sobre cada ítem.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>4. Información Adicional</h2>
+    <p>
+        Se realizo el punto 4.5 de la tarea para el puntaje extra.
+    </p>
+
+</body>
+</html>
