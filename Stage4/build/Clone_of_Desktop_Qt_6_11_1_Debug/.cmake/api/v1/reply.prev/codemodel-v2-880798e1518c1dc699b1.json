@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-03676049d4d015a534b6.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Stage3",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Stage3::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Stage3-Debug-a83213d3b87d90fdde16.json",
+					"name" : "Stage3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Stage3_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Stage3_autogen-Debug-22ffbaa8ae95fc10e6ed.json",
+					"name" : "Stage3_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Stage3_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Stage3_autogen_timestamp_deps-Debug-f0e0f80da95ec517d56b.json",
+					"name" : "Stage3_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/parg/Downloads/ELO239/Stage3/build/Clone_of_Desktop_Qt_6_11_1_Debug",
+		"source" : "/home/parg/Downloads/ELO239/Stage3"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
