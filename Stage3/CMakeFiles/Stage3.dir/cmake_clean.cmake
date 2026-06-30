@@ -1,0 +1,39 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/Stage3.dir/link.d"
+  "CMakeFiles/Stage3_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/Stage3_autogen.dir/ParseCache.txt"
+  "Stage3_autogen"
+  "CMakeFiles/Stage3.dir/Stage3_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/Stage3.dir/Stage3_autogen/mocs_compilation.cpp.o.d"
+  "CMakeFiles/Stage3.dir/cellular.cpp.o"
+  "CMakeFiles/Stage3.dir/cellular.cpp.o.d"
+  "CMakeFiles/Stage3.dir/cellularview.cpp.o"
+  "CMakeFiles/Stage3.dir/cellularview.cpp.o.d"
+  "CMakeFiles/Stage3.dir/elotelTag.cpp.o"
+  "CMakeFiles/Stage3.dir/elotelTag.cpp.o.d"
+  "CMakeFiles/Stage3.dir/elotelTagView.cpp.o"
+  "CMakeFiles/Stage3.dir/elotelTagView.cpp.o.d"
+  "CMakeFiles/Stage3.dir/equipo.cpp.o"
+  "CMakeFiles/Stage3.dir/equipo.cpp.o.d"
+  "CMakeFiles/Stage3.dir/etnube.cpp.o"
+  "CMakeFiles/Stage3.dir/etnube.cpp.o.d"
+  "CMakeFiles/Stage3.dir/main.cpp.o"
+  "CMakeFiles/Stage3.dir/main.cpp.o.d"
+  "CMakeFiles/Stage3.dir/tablet.cpp.o"
+  "CMakeFiles/Stage3.dir/tablet.cpp.o.d"
+  "CMakeFiles/Stage3.dir/tabletView.cpp.o"
+  "CMakeFiles/Stage3.dir/tabletView.cpp.o.d"
+  "CMakeFiles/Stage3.dir/territory.cpp.o"
+  "CMakeFiles/Stage3.dir/territory.cpp.o.d"
+  "CMakeFiles/Stage3.dir/territoryview.cpp.o"
+  "CMakeFiles/Stage3.dir/territoryview.cpp.o.d"
+  "CMakeFiles/Stage3.dir/widget.cpp.o"
+  "CMakeFiles/Stage3.dir/widget.cpp.o.d"
+  "Stage3"
+  "Stage3.pdb"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/Stage3.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

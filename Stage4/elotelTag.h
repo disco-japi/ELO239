@@ -1,0 +1,16 @@
+#ifndef ELOTELTAG_H
+#define ELOTELTAG_H
+
+#include "equipo.h"
+
+class EloTelTag : public Equipo {
+    Q_OBJECT
+private:
+    std::string nombreTag;
+
+public:
+    EloTelTag(std::string nombre, std::string nombreTag, double x, double y, int vel, int ang, int dAng);
+    ~EloTelTag() override = default;
+};
+
+#endif // ELOTELTAG_H
